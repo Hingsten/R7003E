@@ -20,4 +20,4 @@ A = double(Anumerical)
 B = double(Bnumerical)
 C = [0 0 1 0];
 D = 0;
-save("LABA_CONT.mat","A","B","C","D","-append")
+save(currentfolder+"\Viktor\Lab_A\LABA_CONT.mat","A","B","C","D","-append")
