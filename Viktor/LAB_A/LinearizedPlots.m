@@ -1,6 +1,7 @@
 close all; clear all;
 open_system('./LabA_LinearizedBotVsSimulator.slx');
 sim('LabA_LinearizedBotVsSimulator');
+save_system("LabA_LinearizedBotVsSimulator");
 close_system('LabA_LinearizedBotVsSimulator');
 afFigurePosition = [1 1 10 6];
 figure(1)
