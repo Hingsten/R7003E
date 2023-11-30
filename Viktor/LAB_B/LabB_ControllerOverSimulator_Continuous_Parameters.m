@@ -32,5 +32,8 @@ rhoChose = 3.5;
 poles =  zero(1+rhoChose*sysGG);
 stablePoles = poles(real(poles)<0);
 K = acker(A,B1,stablePoles);
+<<<<<<< HEAD
 
 %LQR seems to perform better, also "easier" to design
+=======
+>>>>>>> 95abb65cc366284d8a3a7f53c7aafc9476e64063
