@@ -3,6 +3,9 @@ clear all;
 clc;
 
 
+LabB_Solutions
+
+
 % load the PID! Ok...
 kP = -46.6;
 kI = -260;
@@ -11,12 +14,11 @@ kD = -0.1;
 load Linear_Param.mat
 load poles.mat
 format shortE
-poles = [-100 -101 -102 -103];
 
 %Full order
-C = [1 0 0 0;0 0 1 0];
+C = [1 0 0 0;0 0 1 0]
 factor = 4;
-L = (place(A',C',factor*poles))';
+L = (place(A',C',factor*poles))'
 
 
 T = [C;0 1 0 0; 0 0 0 1];
@@ -39,12 +41,12 @@ Cx = Cbnacc(2:4);
 AA = Axx;
 CC = [Ayx
       Cx];
-Lpartial = ( place( AA', CC', factor*poles(2:4) ) )';
-Lacc = Lpartial(:,1);
-Lnacc = Lpartial(:,2);
+L = ( place( AA', CC', factor*poles(2:4) ) )';
+Lacc = L(:,1);
+Lnacc = L(:,2);
 
-poles(2:4);
-observerPoles = eig(AA-Lpartial*CC);
+poles(2:4)
+observerPoles = eig(AA-L*CC);
 
 M1 = Axx-Lacc*Ayx-Lnacc*Cx;
 M2 = Bx-Lacc*By;
@@ -55,11 +57,9 @@ M6 = T(:,1);
 M7 = T(:,2:4);
 
 %Making sure that A, B, C and D are correct
-B = B(:,1);
+B = B(:)
 C = [1 0 0 0; 0 0 1 0];
-D = [0 ;0];
 
-%%Example code provided
 % 
 % M1 = 1.0e+03 * [
 %    -0.4358   -0.0072    0.0091

@@ -12,7 +12,7 @@ load Linear_Param.mat
 %                 omegan*(-zeta+1i*sqrt(1-zeta^2));
 %                 omegan*(-zeta-1i*sqrt(1-zeta^2))];
 % K = acker(A,B(:,1),ideal_poles);
-
+% poles = ideal_poles;
 
 % % SS LQR design
 Cweight = [5 1 10 2]; %Most weight on theta_b, then on x_w, least on velocities
@@ -32,8 +32,6 @@ rhoChose = 3.5;
 poles =  zero(1+rhoChose*sysGG);
 stablePoles = poles(real(poles)<0);
 K = acker(A,B1,stablePoles);
-<<<<<<< HEAD
+poles = stablePoles;
 
-%LQR seems to perform better, also "easier" to design
-=======
->>>>>>> 95abb65cc366284d8a3a7f53c7aafc9476e64063
+save("poles.mat","poles")
