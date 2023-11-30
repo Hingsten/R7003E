@@ -1,5 +1,5 @@
 close all; clear all;
-disturbance  = 0.8; %newton
+disturbance  = 0.77; %newton
 d = disturbance;
 save("LABA_CONT.mat","d","-append")
 open_system('./PlottingDiscretevsSim.slx');
@@ -12,6 +12,7 @@ plot(x_w.time, x_w.signals.values);
 title('x_w'); xlabel('time'); ylabel('meters')
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition);
 set(gcf, 'PaperPositionMode', 'auto');
+legend("Simulation","Linearized Plant")
 print('-depsc2', '-r300', 'LabA_DISC_VS_x_w.eps');
 figure(2)
 plot(theta_b.time, theta_b.signals.values * 180 / pi);
@@ -19,6 +20,7 @@ plot(theta_b.time, theta_b.signals.values * 180 / pi);
 title('\theta_b'); xlabel('time'); ylabel('degrees')
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition);
 set(gcf, 'PaperPositionMode', 'auto');
+legend("Simulation","Linearized Plant")
 print('-depsc2', '-r300', 'LabA_DISC_VS_theta_b.eps');
 figure(3)
 plot(d.time, d.signals.values);
@@ -31,4 +33,5 @@ plot(v_m.time, v_m.signals.values);
 title('v_m'); xlabel('time'); ylabel('Volt')
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition);
 set(gcf, 'PaperPositionMode', 'auto');
+legend("Simulation","Linearized Plant")
 print('-depsc2', '-r300', 'LabA_DISC_VS_v_m.eps')
