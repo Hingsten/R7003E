@@ -4,7 +4,7 @@ clc;
 
 load Linear_Param.mat
 
-% % SS pole placement
+% SS pole placement
 % omegan = 5.7;
 % zeta = 0.8;
 % ideal_poles = [-475;
@@ -14,8 +14,8 @@ load Linear_Param.mat
 % K = acker(A,B(:,1),ideal_poles);
 % poles = ideal_poles;
 
-% % SS LQR design
-Cweight = [5 1 10 2]; %Most weight on theta_b, then on x_w, least on velocities
+% SS LQR design
+Cweight = [0 0 10 0]; %Most weight on theta_b, then on x_w, least on velocities
 B1 = B(:,1);
 [num,den] = ss2tf(A,B1,Cweight,0);
 s = tf("s");
@@ -27,10 +27,10 @@ sysGG = Nplus*Nminus/(Dplus*Dminus);
 % rho = linspace(0,10);
 % rlocus(sysGG,rho)
 
-rhoChose = 3.5;
+rhoChose = 1;
   % pzmap(1+rhoChose*sysGG)
 poles =  zero(1+rhoChose*sysGG);
-stablePoles = poles(real(poles)<0);
+stablePoles = poles(real(poles)<0)
 K = acker(A,B1,stablePoles);
 poles = stablePoles;
 

@@ -19,19 +19,24 @@ Ad = discreteStateSpace.A;
 Bd = discreteStateSpace.B;
 Cd = discreteStateSpace.C;
 D = discreteStateSpace.D;
-discretePoles = exp(poles*fSamplingPeriod);
+discretePoles = exp(poles*fSamplingPeriod)
 
 %Controller
-Kd = acker(Ad,Bd,discretePoles);
+Kd = place(Ad,Bd,discretePoles);
 
 %Observers
 factor = 4;
 speed = max(abs(poles(2:4)));
 contObserverPoles(1) = poles(1);
-contObserverPoles(2) = -6*factor
+contObserverPoles(2) = -6*factor*speed; % Place pole to not disturb dominant poles
+
+omegan = factor*speed;
+zeta = 0.8;
+contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
+                omegan*(-zeta-1i*sqrt(1-zeta^2))];
 desiredPoles = exp(contObserverPoles*factor*fSamplingPeriod);
 
-%F
+%Full order
 Ld = (place(Ad',Cd',desiredPoles))';
 
 %Reduced order

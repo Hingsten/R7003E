@@ -19,10 +19,10 @@ Ad = discreteStateSpace.A;
 Bd = discreteStateSpace.B;
 Cd = discreteStateSpace.C;
 D = discreteStateSpace.D;
-discretePoles = exp(poles*fSamplingPeriod);
+discretePoles = exp(poles*fSamplingPeriod)
 
 %Controller
-Kd = acker(Ad,Bd,discretePoles);
+Kd = place(Ad,Bd,discretePoles);
 
 %Observers
 factor = 4;
