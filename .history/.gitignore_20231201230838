@@ -1,0 +1,7 @@
+*.css
+*.tmw
+*.slxc
+*.elf
+*.eep
+slprj/
+Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/ext_mode_types.h

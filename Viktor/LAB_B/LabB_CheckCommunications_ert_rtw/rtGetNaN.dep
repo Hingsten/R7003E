@@ -1,0 +1,11 @@
+rtGetNaN.o: \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rtGetNaN.c \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rtwtypes.h \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rtGetNaN.h \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h
+
+C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rtwtypes.h:
+
+C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rtGetNaN.h:
+
+C:/Users/Jasminis/OneDrive/R7003E/Viktor/LAB_B/LabB_CheckCommunications_ert_rtw/rt_nonfinite.h:

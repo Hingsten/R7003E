@@ -1,0 +1,8 @@
+*.css
+*.tmw
+*.slxc
+*.elf
+*.eep
+slprj/
+*./ext_mode_types.h
+
