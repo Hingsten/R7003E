@@ -1,11 +1,10 @@
-close all;
 set(0,'defaulttextinterpreter','latex')
   set(0,'DefaultTextFontname', 'CMU Serif')
    set(0,'DefaultAxesFontName', 'CMU Serif')
 afFigurePosition = [1 1 10 6];
 
 index = 2000:5500;
-figure
+figure(1)
 plot(afTimes(index), aafProcessedInformation(MEASURED_X_W_INDEX,index));
 xlabel('time [sec]');
 ylabel('position [m]');
@@ -13,8 +12,7 @@ title('$$x_w$$');
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition); set(gcf, 'PaperPositionMode', 'auto');
 print('-depsc2', '-r300', 'LabB_4_4_x_w.eps');
 
-
-figure
+figure(2)
 plot(afTimes(index), aafProcessedInformation(MEASURED_THETA_B_INDEX,index));
 xlabel('time [sec]');
 ylabel('angle [rad]');
@@ -22,12 +20,12 @@ title('$$\theta_b$$');
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition); set(gcf, 'PaperPositionMode', 'auto');
 print('-depsc2', '-r300', 'LabB_4_4_theta_b.eps');
 
-
-figure
+figure(3)
 plot(afTimes(index), aafProcessedInformation(1,index));
 xlabel('time [sec]');
-ylabel('voltage [v]');
-title('$$u$$');
+ylabel('angle [rad]');
+title('$$\theta_b$$');
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition); set(gcf, 'PaperPositionMode', 'auto');
-print('-depsc2', '-r300', 'LabB_4_4_u.eps');
+print('-depsc2', '-r300', 'LabB_4_4_theta_b.eps');
+
 
