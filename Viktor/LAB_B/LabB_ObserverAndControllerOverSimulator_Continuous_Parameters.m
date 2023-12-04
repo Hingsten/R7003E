@@ -8,7 +8,7 @@ format shortE
 
 
 %LQR -method
-Cweight = [5 1 10 2]; %Most weight on theta_b, then on x_w, least on velocities
+Cweight = [1 1 10 10]; %Most weight on theta_b, then on x_w, least on velocities
 B1 = B(:,1);
 [num,den] = ss2tf(A,B1,Cweight,0);
 s = tf("s");
@@ -17,7 +17,7 @@ Nminus = num(1)*(-s)^4 +num(2)*(-s)^3 +num(3)*(-s)^2 +num(4)*(-s)^1 +num(5)*(-s)
 Dplus = den(1)*(s)^4 +den(2)*(s)^3 +den(3)*(s)^2 +den(4)*(s)^1 +den(5)*(s)^0;
 Dminus = den(1)*(-s)^4 +den(2)*(-s)^3 +den(3)*(-s)^2 +den(4)*(-s)^1 +den(5)*(-s)^0;
 sysGG = Nplus*Nminus/(Dplus*Dminus);
-rhoChose = 3.5;
+rhoChose = 0.5;
 poles =  zero(1+rhoChose*sysGG);
 stablePoles = poles(real(poles)<0);
 K = acker(A,B1,stablePoles);
@@ -26,9 +26,17 @@ poles = stablePoles;
 save("poles.mat","poles")
 
 %Full order
+factor = 4;
+speed = max(abs(poles(2:4)));
+contObserverPoles(1) = poles(1);
+contObserverPoles(2) = -6*factor*speed; % Place pole to not disturb dominant poles
+omegan = factor*speed;
+zeta = 0.8;
+contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
+                             omegan*(-zeta-1i*sqrt(1-zeta^2))];
+
 C = [1 0 0 0;0 0 1 0];
-factor = 6;
-L = (place(A',C',factor*poles))';
+L = (place(A',C',factor*contObserverPoles))';
 
 
 T = [C;0 1 0 0; 0 0 0 1];
@@ -51,7 +59,7 @@ Cx = Cbnacc(2:4);
 AA = Axx;
 CC = [Ayx
       Cx];
-Lpartial = ( place( AA', CC', factor*poles(2:4) ) )';
+Lpartial = ( place( AA', CC', factor*contObserverPoles(2:4) ) )';
 Lacc = Lpartial(:,1);
 Lnacc = Lpartial(:,2);
 

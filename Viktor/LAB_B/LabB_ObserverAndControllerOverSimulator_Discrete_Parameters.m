@@ -7,6 +7,7 @@ fSamplingPeriod = 0.005;
 
 load Linear_Param.mat
 load poles.mat
+poles
 A;
 B = B(:,1);
 C = [1 0 0 0;
