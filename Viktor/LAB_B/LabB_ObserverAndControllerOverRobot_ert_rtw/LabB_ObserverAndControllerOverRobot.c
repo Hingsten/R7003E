@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LabB_ObserverAndControllerOverRobot'.
  *
- * Model version                  : 13.2
+ * Model version                  : 13.3
  * Simulink Coder version         : 9.9 (R2023a) 19-Nov-2022
- * C/C++ source code generated on : Fri Dec  1 22:57:46 2023
+ * C/C++ source code generated on : Sun Dec  3 20:34:14 2023
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -367,11 +367,12 @@ void LabB_ObserverAndControllerOverRobot_step(void)
    *  Gain: '<S4>/Gain8'
    *  Product: '<S1>/Product1'
    */
-  rtb_SaturationVsupplytoVsupply = ((LabB_ObserverAndControllerOve_P.Kd[0] *
-    LabB_ObserverAndControllerOve_B.rtb_Gain8_idx_0 +
-    LabB_ObserverAndControllerOve_P.Kd[1] * rtb_Gain8_idx_1) +
-    LabB_ObserverAndControllerOve_P.Kd[2] * rtb_Gain8_idx_2) +
-    LabB_ObserverAndControllerOve_P.Kd[3] * rtb_Gain8_idx_3;
+  rtb_SaturationVsupplytoVsupply =
+    ((LabB_ObserverAndControllerOve_P.controller_Gain[0] *
+      LabB_ObserverAndControllerOve_B.rtb_Gain8_idx_0 +
+      LabB_ObserverAndControllerOve_P.controller_Gain[1] * rtb_Gain8_idx_1) +
+     LabB_ObserverAndControllerOve_P.controller_Gain[2] * rtb_Gain8_idx_2) +
+    LabB_ObserverAndControllerOve_P.controller_Gain[3] * rtb_Gain8_idx_3;
   rtb_SaturationVsupplytoVsupply *= (real32_T)((real32_T)fabs
     (LabB_ObserverAndControlle_DWork.DiscreteTimeIntegratorconvertfr) < 0.75F);
 

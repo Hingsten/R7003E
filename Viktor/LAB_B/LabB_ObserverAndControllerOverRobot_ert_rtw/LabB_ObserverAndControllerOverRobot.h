@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LabB_ObserverAndControllerOverRobot'.
  *
- * Model version                  : 13.2
+ * Model version                  : 13.3
  * Simulink Coder version         : 9.9 (R2023a) 19-Nov-2022
- * C/C++ source code generated on : Fri Dec  1 22:57:46 2023
+ * C/C++ source code generated on : Sun Dec  3 20:34:14 2023
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -98,9 +98,6 @@ struct Parameters_LabB_ObserverAndCont_ {
                                         */
   real32_T Cd[8];                      /* Variable: Cd
                                         * Referenced by: '<S4>/Gain10'
-                                        */
-  real32_T Kd[4];                      /* Variable: Kd
-                                        * Referenced by: '<S1>/controller'
                                         */
   real32_T Ld[8];                      /* Variable: Ld
                                         * Referenced by: '<S4>/Gain9'
@@ -309,6 +306,9 @@ struct Parameters_LabB_ObserverAndCont_ {
                           /* Computed Parameter: Internal_3_3_InitialCondition_d
                            * Referenced by: '<S8>/Internal_3_3'
                            */
+  real32_T controller_Gain[4];         /* Computed Parameter: controller_Gain
+                                        * Referenced by: '<S1>/controller'
+                                        */
   real32_T converttoradianssec_Gain;
                                  /* Computed Parameter: converttoradianssec_Gain
                                   * Referenced by: '<S2>/convert to radians//sec'

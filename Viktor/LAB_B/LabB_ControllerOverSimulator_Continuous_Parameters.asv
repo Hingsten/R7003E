@@ -27,8 +27,7 @@ sysGG = Nplus*Nminus/(Dplus*Dminus);
 % rho = linspace(0,10);
 % rlocus(sysGG,rho)
 
-%Choose 0.1 ?
-rhoChose = 1;
+rhoChose = 130;
   % pzmap(1+rhoChose*sysGG)
 poles =  zero(1+rhoChose*sysGG);
 stablePoles = poles(real(poles)<0)

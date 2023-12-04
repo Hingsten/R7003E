@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LabB_ObserverAndControllerOverRobot'.
  *
- * Model version                  : 13.2
+ * Model version                  : 13.3
  * Simulink Coder version         : 9.9 (R2023a) 19-Nov-2022
- * C/C++ source code generated on : Fri Dec  1 22:57:46 2023
+ * C/C++ source code generated on : Sun Dec  3 20:34:14 2023
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR

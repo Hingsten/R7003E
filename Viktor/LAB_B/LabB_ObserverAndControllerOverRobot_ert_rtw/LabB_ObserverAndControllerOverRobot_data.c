@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LabB_ObserverAndControllerOverRobot'.
  *
- * Model version                  : 13.2
+ * Model version                  : 13.3
  * Simulink Coder version         : 9.9 (R2023a) 19-Nov-2022
- * C/C++ source code generated on : Fri Dec  1 22:57:46 2023
+ * C/C++ source code generated on : Sun Dec  3 20:34:14 2023
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -36,11 +36,6 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
    * Referenced by: '<S4>/Gain10'
    */
   { 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F },
-
-  /* Variable: Kd
-   * Referenced by: '<S1>/controller'
-   */
-  { -8.1792F, -49.1223F, -71.4928F, -11.5909F },
 
   /* Variable: Ld
    * Referenced by: '<S4>/Gain9'
@@ -338,10 +333,15 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
    */
   0.0F,
 
+  /* Computed Parameter: controller_Gain
+   * Referenced by: '<S1>/controller'
+   */
+  { 8.1792F, 49.1223F, 71.4928F, 11.5909F },
+
   /* Computed Parameter: converttoradianssec_Gain
    * Referenced by: '<S2>/convert to radians//sec'
    */
-  0.000133158057F,
+  -0.000133231239F,
 
   /* Computed Parameter: SaturationVsupplytoVsupply_Lowe
    * Referenced by: '<S53>/Saturation -Vsupply to Vsupply'
@@ -361,7 +361,7 @@ Parameters_LabB_ObserverAndCont LabB_ObserverAndControllerOve_P = {
   /* Computed Parameter: ManualSwitch1_CurrentSetting
    * Referenced by: '<S4>/Manual Switch1'
    */
-  0U,
+  1U,
 
   /* Computed Parameter: Constant_Value_d
    * Referenced by: '<S9>/Constant'
