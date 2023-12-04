@@ -15,7 +15,7 @@ C = [1 0 0 0;
 D = 0;
 contStateSpace = ss(A,B,C,D);
 
-discreteStateSpace = c2d(contStateSpace,fSamplingPeriod);
+discreteStateSpace = c2d(contStateSpace,fSamplingPeriod,"tustin");
 Ad = discreteStateSpace.A;
 Bd = discreteStateSpace.B;
 Cd = discreteStateSpace.C;
@@ -26,16 +26,19 @@ discretePoles = exp(poles*fSamplingPeriod)
 Kd = place(Ad,Bd,discretePoles);
 
 %Observers
-factor = 4;
-speed = max(abs(poles(2:4)));
-contObserverPoles(1) = poles(1);
-contObserverPoles(2) = -20*factor*speed; % Place pole to not disturb dominant poles
+factor = 6;
+% speed = max(abs(poles(2:4)));
+% contObserverPoles(1) = poles(1);
+% contObserverPoles(2) = -6*factor*speed; % Place pole to not disturb dominant poles
+% 
+% omegan = factor*speed;
+% zeta = 0.9;
+% contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
+%                 omegan*(-zeta-1i*sqrt(1-zeta^2))];
 
-omegan = factor*speed;
-zeta = 0.9;
-contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
-                omegan*(-zeta-1i*sqrt(1-zeta^2))];
-desiredPoles = exp(contObserverPoles*fSamplingPeriod);
+% desiredPoles = exp(contObserverPoles*fSamplingPeriod);
+
+desiredPoles = discretePoles.^factor
 
 %Full order
 Ld = (place(Ad',Cd',desiredPoles))';
