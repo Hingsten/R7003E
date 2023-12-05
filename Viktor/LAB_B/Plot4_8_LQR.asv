@@ -49,5 +49,4 @@ print('-depsc2', '-r300', 'LabB_4_8_xw_ABSDIFF_LQR.eps');
 format short
 maxFullThetaDiff = max(abs(thetab.signals.values(index,1)-thetab.signals.values(index,2))*180/pi)
 maxReducedThetaDiff =max(abs(thetab.signals.values(index,1)-thetab.signals.values(index,3))*180/pi)
-maxFullXdiff = max(abs(xw.signals.values(index,1)-xw.signals.values(index,2)))
-maxReducedXDiff = max(abs(xw.signals.values(index,1)-xw.signals.values(index,3)))
+maxFullX
