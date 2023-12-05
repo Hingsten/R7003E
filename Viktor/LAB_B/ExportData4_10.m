@@ -5,8 +5,8 @@ set(0,'defaulttextinterpreter','latex')
    set(0,'DefaultAxesFontName', 'CMU Serif')
 afFigurePosition = [1 1 10 6];
 
-index = 1000:length(afTimes)-1000;
-% index = 1000:2000;
+% index = 1000:length(afTimes)-1000;
+index = 1000:2000;
 figure
 plot(afTimes(1:length(index)), aafProcessedInformation(MEASURED_X_W_INDEX,index));
 xlabel('time [sec]');
@@ -41,4 +41,33 @@ title('$$u$$');
 set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition); set(gcf, 'PaperPositionMode', 'auto');
 xaxis(0,max(afTimes(1:length(index))))
 print('-depsc2', '-r300', 'LabB_4_10_u.eps');
+
+figure
+plot(afTimes(1:length(index)), aafProcessedInformation(MEASURED_X_W_INDEX,index));
+hold on
+plot(afTimes(1:length(index)), aafProcessedInformation(X_W_HAT_FULL_INDEX,index));
+plot(afTimes(1:length(index)), aafProcessedInformation(X_W_HAT_REDUCED_INDEX,index));
+legend("Measured","Full observer","Reduced Observer")
+xlabel('time [sec]');
+ylabel('position [m]');
+title('$$x_w$$');
+set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition); set(gcf, 'PaperPositionMode', 'auto');
+xaxis(0,max(afTimes(1:length(index))))
+print('-depsc2', '-r300', 'LabB_4_10_x_w_compared.eps');
+
+figure
+plot(afTimes(1:length(index)), aafProcessedInformation(MEASURED_THETA_B_INDEX,index));
+hold on
+plot(afTimes(1:length(index)), aafProcessedInformation(THETA_B_HAT_FULL_INDEX,index));
+% plot(afTimes(1:length(index)),aafProcessedInformation(THETA_B_HAT_REDUCED_INDEX,index)/10); %Seems bad
+legend("Measured values","Full observer")
+xlabel('time [sec]');
+ylabel('angle [degrees]');
+title('$$\theta_b$$');
+set(gcf, 'Units', 'centimeters'); set(gcf,'Position',afFigurePosition); set(gcf, 'PaperPositionMode', 'auto');
+xaxis(0,max(afTimes(1:length(index))))
+print('-depsc2', '-r300', 'LabB_4_10_theta_b_compared.eps');
+
+
+
 

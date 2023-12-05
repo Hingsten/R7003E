@@ -28,13 +28,12 @@ Kd = acker(Ad,Bd,discretePoles);
 factor = 4;
 speed = max(abs(poles(2:4)));
 contObserverPoles(1) = poles(1);
-contObserverPoles(2) = -6*factor*speed; % Place pole to not disturb dominant poles
-
+contObserverPoles(2) = -2*factor*speed; % Place pole to not disturb dominant poles
 omegan = factor*speed;
-zeta = 0.8;
+zeta = 0.99;
 contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
-                omegan*(-zeta-1i*sqrt(1-zeta^2))];
-desiredPoles = exp(contObserverPoles*factor*fSamplingPeriod);
+                             omegan*(-zeta-1i*sqrt(1-zeta^2))];
+desiredPoles = exp(contObserverPoles*fSamplingPeriod)
 
 %Full order
 Ld = (place(Ad',Cd',desiredPoles))';

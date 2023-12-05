@@ -7,7 +7,6 @@ fSamplingPeriod = 0.005;
 
 load Linear_Param.mat
 load poles.mat
-poles
 A;
 B = B(:,1);
 C = [1 0 0 0;
@@ -15,30 +14,26 @@ C = [1 0 0 0;
 D = 0;
 contStateSpace = ss(A,B,C,D);
 
-discreteStateSpace = c2d(contStateSpace,fSamplingPeriod,"tustin");
+discreteStateSpace = c2d(contStateSpace,fSamplingPeriod);
 Ad = discreteStateSpace.A;
 Bd = discreteStateSpace.B;
 Cd = discreteStateSpace.C;
 D = discreteStateSpace.D;
-discretePoles = exp(poles*fSamplingPeriod)
+discretePoles = exp(poles*fSamplingPeriod);
 
 %Controller
-Kd = place(Ad,Bd,discretePoles);
+Kd = acker(Ad,Bd,discretePoles);
 
 %Observers
-factor = 6;
-% speed = max(abs(poles(2:4)));
-% contObserverPoles(1) = poles(1);
-% contObserverPoles(2) = -6*factor*speed; % Place pole to not disturb dominant poles
-% 
-% omegan = factor*speed;
-% zeta = 0.9;
-% contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
-%                 omegan*(-zeta-1i*sqrt(1-zeta^2))];
-
-% desiredPoles = exp(contObserverPoles*fSamplingPeriod);
-
-desiredPoles = discretePoles.^factor
+factor = 4;
+speed = max(abs(poles(2:4)));
+contObserverPoles(1) = poles(1);
+contObserverPoles(2) = -2*factor*speed; % Place pole to not disturb dominant poles
+omegan = factor*speed;
+zeta = 0.99;
+contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
+                             omegan*(-zeta-1i*sqrt(1-zeta^2))];
+desiredPoles = exp(contObserverPoles*fSamplingPeriod)
 
 %Full order
 Ld = (place(Ad',Cd',desiredPoles))';
@@ -64,6 +59,7 @@ Cx = Cbnacc(2:4);
 AA = Axx;
 CC = [Ayx
       Cx];
+
 Lpartial = ( place( AA', CC', desiredPoles(2:4) ) )';
 Lacc = Lpartial(:,1);
 Lnacc = Lpartial(:,2);
