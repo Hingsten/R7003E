@@ -4,19 +4,27 @@ clc;
 
 
 % load the PID! Ok...
-kP = -46.6;
-kI = -260;
-kD = -0.1;
+kP = -58.0796;
+kI = -360.7094;
+kD = -0.1207;
 
 load Linear_Param.mat
 load poles.mat
 format shortE
-poles = [-100 -101 -102 -103];
+B1 = B(:,1);
+K = acker(A,B1,poles)
 
 %Full order
 C = [1 0 0 0;0 0 1 0];
 factor = 4;
-L = (place(A',C',factor*poles))';
+speed = max(abs(poles(2:4)));
+contObserverPoles(1) = poles(1);
+contObserverPoles(2) = -2*factor*speed; % Place pole to not disturb dominant poles
+omegan = factor*speed;
+zeta = 0.99;
+contObserverPoles(3:4) =    [omegan*(-zeta+1i*sqrt(1-zeta^2));
+                             omegan*(-zeta-1i*sqrt(1-zeta^2))];
+L = (place(A',C',contObserverPoles))'
 
 
 T = [C;0 1 0 0; 0 0 0 1];
@@ -39,7 +47,7 @@ Cx = Cbnacc(2:4);
 AA = Axx;
 CC = [Ayx
       Cx];
-Lpartial = ( place( AA', CC', factor*poles(2:4) ) )';
+Lpartial = ( place( AA', CC', contObserverPoles(2:4) ) )';
 Lacc = Lpartial(:,1);
 Lnacc = Lpartial(:,2);
 
