@@ -3,9 +3,15 @@ clear all;
 clc;
 
 % select the sampling time
-fSamplingPeriod = 0.005;
+fs = 4.5; %Hz
+simStep = 0.001;
+fSamplingPeriod = floor(1/fs/simStep)*simStep
+[Ad,Bd,Cd,Dd] = getDiscreteStateSpace(fSamplingPeriod);
 
-Kd = [-8.1792  -49.1223  -71.4928  -11.5909];
- 
+%Paramaters for dlqr
+
+Cweight = [10 1 10 2];   %Our previous weighting vector, falls over for lower than 4.5 Hz
+rho = 8.5;      
+Kd = getDiscreteKd(Cweight,rho,fSamplingPeriod)
 
 
