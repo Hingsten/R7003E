@@ -1,7 +1,7 @@
 close all;
 clear all;
 clc
-fs = 200;% Hz
+fs = 35;% Hz
 simStep = 0.0001;
 fSamplingPeriod = floor(1/fs/simStep)*simStep
 [Ad, Bd,Cd,Dd] = getDiscreteStateSpace(fSamplingPeriod);
@@ -14,7 +14,7 @@ rho = 8.5;
 Kd
 
 %Observer poles
-factor = 4;
+factor = 6;
 [~,slowPoleIndex] = min(abs(CLP)); %Find the slowest pole
 index = 1:4;
 index = setdiff(index,slowPoleIndex);
@@ -30,6 +30,6 @@ observerPoles(2:4) = CLP(index).^factor; % Place pole to not disturb dominant po
 
 
 %Full observer
-[Ld,resultingPoles] = getLd(observerPoles); %Around 40 Hz
+[Ld,resultingPoles] = getLd(observerPoles);
 %Reduced observer
-[Md1,Md2,Md3,Md4,Md5,Md6,Md7] = getMd(observerPoles(2:4)); % No lower than 190 Hz
+[Md1,Md2,Md3,Md4,Md5,Md6,Md7] = getMd(observerPoles(index));
