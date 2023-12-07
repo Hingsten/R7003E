@@ -19,7 +19,8 @@ factor = 4;
 index = 1:4;
 index = setdiff(index,slowPoleIndex);
 observerPoles(1) = CLP(slowPoleIndex);
-observerPoles(2:4) = CLP(index).^factor; % Place pole to not disturb dominant poles
+observerPoles(2:4) = CLP(index).^factor % Place pole to not disturb dominant poles
+% observerPoles(4) = observerPoles(1);
 % 
 % speed = max(abs(real(CLP)))^factor;
 % observerPoles(2) = speed^6; % Place pole to not disturb dominant poles
@@ -30,6 +31,8 @@ observerPoles(2:4) = CLP(index).^factor; % Place pole to not disturb dominant po
 
 
 %Full observer
-[Ld,resultingPoles] = getLd(observerPoles); %Around 40 Hz
+[Ld,resultingPoles] = getLd(observerPoles,fSamplingPeriod); %Around 13 Hz
 %Reduced observer
-[Md1,Md2,Md3,Md4,Md5,Md6,Md7] = getMd(observerPoles(2:4)); % No lower than 190 Hz
+[Md1,Md2,Md3,Md4,Md5,Md6,Md7] = getMd(observerPoles(2:4),fSamplingPeriod); % No lower than 6 Hz
+Nud = 0;
+Nxd = 0;
