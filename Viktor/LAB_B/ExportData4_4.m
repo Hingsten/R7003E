@@ -5,7 +5,7 @@ set(0,'defaulttextinterpreter','latex')
    set(0,'DefaultAxesFontName', 'CMU Serif')
 afFigurePosition = [1 1 10 6];
 
-index = 2000:5500;
+index = 500:length(aafProcessedInformation);
 figure
 plot(afTimes(index), aafProcessedInformation(MEASURED_X_W_INDEX,index));
 xlabel('time [sec]');

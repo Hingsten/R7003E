@@ -1,0 +1,655 @@
+%implements s7_b0_ld9hr_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(33, 0, "")> %% rtb_Sum3
+%<SLibCGIRAccessLocalVar(32, 0, "")> %% rtb_Sum2_p
+%<SLibCGIRAccessLocalVar(34, 0, "")> %% rtb_DataTypeConversion1
+%<SLibCGIRAccessLocalVar(29, 0, "")> %% rtb_Fcn4
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_Fcn3
+%<SLibCGIRAccessLocalVar(30, 0, "")> %% rtb_SaturationVsupplytoVsupply
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Internal_3_2
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+codertarget_arduinobase_inter_a *obj;
+real32_T rtb_Add1_idx_0;
+real32_T rtb_Add1_idx_1;
+real32_T rtb_Add1_idx_2;
+real32_T rtb_Gain8_idx_1;
+real32_T rtb_Gain8_idx_2;
+real32_T rtb_Gain8_idx_3;
+int16_T i;
+uint16_T rtb_DataTypeConversion6;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS7B1 = OpaqueTLCBlockFcn("Outputs", 7, 1, 0, 1, 0)
+%assign tlcOutputsFcnOfS7B2 = OpaqueTLCBlockFcn("Outputs", 7, 2, 0, 1, 1)
+%assign tlcOutputsFcnOfS7B3 = OpaqueTLCBlockFcn("Outputs", 7, 3, 0, 1, 2)
+%assign tlcOutputsFcnOfS7B4 = OpaqueTLCBlockFcn("Outputs", 7, 4, 0, 1, 3)
+%assign tlcOutputsFcnOfS7B5 = OpaqueTLCBlockFcn("Outputs", 7, 5, 0, 1, 4)
+%assign tlcOutputsFcnOfS7B6 = OpaqueTLCBlockFcn("Outputs", 7, 6, 0, 1, 5)
+%assign tlcOutputsFcnOfS7B7 = OpaqueTLCBlockFcn("Outputs", 7, 7, 0, 1, 6)
+%assign tlcOutputsFcnOfS7B8 = OpaqueTLCBlockFcn("Outputs", 7, 8, 0, 1, 7)
+%assign tlcOutputsFcnOfS7B9 = OpaqueTLCBlockFcn("Outputs", 7, 9, 0, 1, 8)
+%assign tlcOutputsFcnOfS7B10 = OpaqueTLCBlockFcn("Outputs", 7, 10, 0, 1, 9)
+%assign tlcOutputsFcnOfS7B11 = OpaqueTLCBlockFcn("Outputs", 7, 11, 0, 1, 10)
+%assign tlcOutputsFcnOfS7B12 = OpaqueTLCBlockFcn("Outputs", 7, 12, 0, 1, 11)
+%assign tlcOutputsFcnOfS7B13 = OpaqueTLCBlockFcn("Outputs", 7, 13, 0, 1, 12)
+%assign tlcOutputsFcnOfS7B14 = OpaqueTLCBlockFcn("Outputs", 7, 14, 0, 1, 13)
+%assign tlcOutputsFcnOfS7B15 = OpaqueTLCBlockFcn("Outputs", 7, 15, 0, 1, 14)
+%assign tlcOutputsFcnOfS7B16 = OpaqueTLCBlockFcn("Outputs", 7, 16, 0, 1, 15)
+%assign tlcOutputsFcnOfS7B17 = OpaqueTLCBlockFcn("Outputs", 7, 17, 0, 1, 16)
+%assign tlcOutputsFcnOfS7B18 = OpaqueTLCBlockFcn("Outputs", 7, 18, 0, 1, 17)
+%assign tlcOutputsFcnOfS7B19 = OpaqueTLCBlockFcn("Outputs", 7, 19, 0, 1, 18)
+%assign tlcOutputsFcnOfS7B20 = OpaqueTLCBlockFcn("Outputs", 7, 20, 0, 1, 19)
+%assign tlcOutputsFcnOfS7B21 = OpaqueTLCBlockFcn("Outputs", 7, 21, 0, 1, 20)
+%assign tlcOutputsFcnOfS7B22 = OpaqueTLCBlockFcn("Outputs", 7, 22, 0, 1, 21)
+%assign tlcOutputsFcnOfS7B23 = OpaqueTLCBlockFcn("Outputs", 7, 23, 0, 1, 22)
+%assign tlcOutputsFcnOfS7B24 = OpaqueTLCBlockFcn("Outputs", 7, 24, 0, 1, 23)
+%assign tlcOutputsFcnOfS7B25 = OpaqueTLCBlockFcn("Outputs", 7, 25, 0, 1, 24)
+%assign tlcUpdateFcnOfS7B1 = OpaqueTLCBlockFcn("Update", 7, 1, 0, 1, 25)
+%assign tlcUpdateFcnOfS7B2 = OpaqueTLCBlockFcn("Update", 7, 2, 0, 1, 26)
+%assign tlcUpdateFcnOfS7B3 = OpaqueTLCBlockFcn("Update", 7, 3, 0, 1, 27)
+%assign tlcUpdateFcnOfS7B4 = OpaqueTLCBlockFcn("Update", 7, 4, 0, 1, 28)
+%assign tlcUpdateFcnOfS7B5 = OpaqueTLCBlockFcn("Update", 7, 5, 0, 1, 29)
+%assign tlcUpdateFcnOfS7B6 = OpaqueTLCBlockFcn("Update", 7, 6, 0, 1, 30)
+%assign tlcUpdateFcnOfS7B7 = OpaqueTLCBlockFcn("Update", 7, 7, 0, 1, 31)
+%assign tlcUpdateFcnOfS7B8 = OpaqueTLCBlockFcn("Update", 7, 8, 0, 1, 32)
+%assign tlcUpdateFcnOfS7B9 = OpaqueTLCBlockFcn("Update", 7, 9, 0, 1, 33)
+%assign tlcUpdateFcnOfS7B10 = OpaqueTLCBlockFcn("Update", 7, 10, 0, 1, 34)
+%assign tlcUpdateFcnOfS7B11 = OpaqueTLCBlockFcn("Update", 7, 11, 0, 1, 35)
+%assign tlcUpdateFcnOfS7B12 = OpaqueTLCBlockFcn("Update", 7, 12, 0, 1, 36)
+%assign tlcUpdateFcnOfS7B13 = OpaqueTLCBlockFcn("Update", 7, 13, 0, 1, 37)
+%assign tlcUpdateFcnOfS7B14 = OpaqueTLCBlockFcn("Update", 7, 14, 0, 1, 38)
+%assign tlcUpdateFcnOfS7B15 = OpaqueTLCBlockFcn("Update", 7, 15, 0, 1, 39)
+%assign tlcUpdateFcnOfS7B16 = OpaqueTLCBlockFcn("Update", 7, 16, 0, 1, 40)
+%assign tlcUpdateFcnOfS7B17 = OpaqueTLCBlockFcn("Update", 7, 17, 0, 1, 41)
+%assign tlcUpdateFcnOfS7B18 = OpaqueTLCBlockFcn("Update", 7, 18, 0, 1, 42)
+%assign tlcUpdateFcnOfS7B19 = OpaqueTLCBlockFcn("Update", 7, 19, 0, 1, 43)
+%assign tlcUpdateFcnOfS7B20 = OpaqueTLCBlockFcn("Update", 7, 20, 0, 1, 44)
+%assign tlcUpdateFcnOfS7B21 = OpaqueTLCBlockFcn("Update", 7, 21, 0, 1, 45)
+%assign tlcUpdateFcnOfS7B22 = OpaqueTLCBlockFcn("Update", 7, 22, 0, 1, 46)
+%assign tlcUpdateFcnOfS7B23 = OpaqueTLCBlockFcn("Update", 7, 23, 0, 1, 47)
+%assign tlcUpdateFcnOfS7B24 = OpaqueTLCBlockFcn("Update", 7, 24, 0, 1, 48)
+%assign tlcUpdateFcnOfS7B25 = OpaqueTLCBlockFcn("Update", 7, 25, 0, 1, 49)
+/* {S!d562}MATLABSystem: '<S3>/Encoder' */
+/*         %<"\%\% Define output properties"> */
+/* 'Encoder_arduino:136' num = 0; */
+/* 'Encoder_arduino:140' num = 1; */
+/* 'Encoder_arduino:121' y = int32(0); */
+/* 'Encoder_arduino:122' if coder.target('Rtw') */
+/*  Call: int enc_output(int enc) */
+/* 'Encoder_arduino:124' y = coder.ceval('enc_output', obj.Encoder); */
+/*@>fc79d*/LabB_ObserverAndControllerOve_B./*@>1059b6*/rtb_Encoder_c/*@>d954f*/ = /*@>fa392*/enc_output(/*@>ed401*/1.0);
+/* {S!d564}Gain: '<S2>/convert to meters' incorporates:
+ *  DataTypeConversion: '<S3>/Data Type  Conversion2'
+ *  Gain: '<S2>/convert to  radians'
+ *  MATLABSystem: '<S3>/Encoder'
+ */
+/*@>fc7a3*/LabB_ObserverAndControllerOve_B./*@>1059b9*/converttometers/*@>d7213*/ = /*@>fcd0c*/LabB_ObserverAndControllerOve_P./*@>105b57*/converttoradians_Gain/*@>ee29b*/ * /*@>e552b*/(real32_T)/*@>fc7a9*/LabB_ObserverAndControllerOve_B./*@>1059bc*/rtb_Encoder_c/*@>ee297*/ * /*@>fcd12*/LabB_ObserverAndControllerOve_P./*@>105b5a*/fWheelRadius;
+/* {S!d566}SampleTimeMath: '<S5>/TSamp'
+ *
+ * About '<S5>/TSamp':
+ *  y = u * K where K = 1 / ( w * Ts )
+ */
+/*@>fc7af*/LabB_ObserverAndControllerOve_B./*@>1059bf*/TSamp/*@>d721a*/ = /*@>fc7b5*/LabB_ObserverAndControllerOve_B./*@>1059c2*/converttometers/*@>ee293*/ * /*@>fcd18*/LabB_ObserverAndControllerOve_P./*@>105b5d*/TSamp_WtEt;
+/* {S!d568}SampleTimeMath: '<S6>/TSamp' incorporates:
+ *  DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)'
+ *
+ * About '<S6>/TSamp':
+ *  y = u * K where K = 1 / ( w * Ts )
+ */
+/*@>fc7bb*/LabB_ObserverAndControllerOve_B./*@>1059c5*/TSamp_n/*@>d73d2*/ = /*@>fd107*/LabB_ObserverAndControlle_DWork./*@>105be1*/DiscreteTimeIntegratorconvertfr/*@>ee28f*/ * /*@>fcd1e*/LabB_ObserverAndControllerOve_P./*@>105b60*/TSamp_WtEt_m;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B1)
+/* {S!d570}DiscreteStateSpace: '<S7>/Internal_1_1' */
+%<SLibCG_DumpSSCode("/*@[fe835*/",tlcOutputsFcnOfS7B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B2)
+/* {S!d572}DiscreteStateSpace: '<S7>/Internal_1_2' */
+%<SLibCG_DumpSSCode("/*@[fe83d*/",tlcOutputsFcnOfS7B2,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B3)
+/* {S!d574}DiscreteStateSpace: '<S7>/Internal_1_3' */
+%<SLibCG_DumpSSCode("/*@[fe845*/",tlcOutputsFcnOfS7B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B4)
+/* {S!d576}DiscreteStateSpace: '<S7>/Internal_1_4' */
+%<SLibCG_DumpSSCode("/*@[fe84d*/",tlcOutputsFcnOfS7B4,"/*@]*/")>\
+%endif
+/* {S!d578}Fcn: '<S9>/Fcn3' incorporates:
+ *  Sum: '<S7>/Sum1'
+ */
+/*@>ed3e9*/rtb_Fcn3/*@>db4b1*/ = ((/*@>ed8cc*/rtb_Fcn3/*@>db4ac*/ + /*@>ed8ca*/rtb_Internal_3_2)/*@>db4ad*/ + /*@>ed8c8*/rtb_Sum3)/*@>db4ae*/ + /*@>ed8c6*/rtb_Sum2_p;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B5)
+/* {S!d580}DiscreteStateSpace: '<S7>/Internal_2_1' */
+%<SLibCG_DumpSSCode("/*@[fe855*/",tlcOutputsFcnOfS7B5,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B6)
+/* {S!d582}DiscreteStateSpace: '<S7>/Internal_2_2' */
+%<SLibCG_DumpSSCode("/*@[fe85d*/",tlcOutputsFcnOfS7B6,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B7)
+/* {S!d584}DiscreteStateSpace: '<S7>/Internal_2_3' */
+%<SLibCG_DumpSSCode("/*@[fe865*/",tlcOutputsFcnOfS7B7,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B8)
+/* {S!d586}DiscreteStateSpace: '<S7>/Internal_2_4' */
+%<SLibCG_DumpSSCode("/*@[fe86d*/",tlcOutputsFcnOfS7B8,"/*@]*/")>\
+%endif
+/* {S!d588}Sum: '<S7>/Sum2' */
+/*@>fc7f1*/LabB_ObserverAndControllerOve_B./*@>1059c8*/Sum2/*@>db4b8*/ = ((/*@>f9205*/rtb_Sum2_p/*@>f9203*/ + /*@>f9207*/rtb_Sum3)/*@>f9202*/ + /*@>f9209*/rtb_Internal_3_2)/*@>db4b5*/ + /*@>ed863*/rtb_Fcn4;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B9)
+/* {S!d590}DiscreteStateSpace: '<S7>/Internal_3_1' */
+%<SLibCG_DumpSSCode("/*@[fe875*/",tlcOutputsFcnOfS7B9,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B10)
+/* {S!d592}DiscreteStateSpace: '<S7>/Internal_3_2' */
+%<SLibCG_DumpSSCode("/*@[fe87d*/",tlcOutputsFcnOfS7B10,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B11)
+/* {S!d594}DiscreteStateSpace: '<S7>/Internal_3_3' */
+%<SLibCG_DumpSSCode("/*@[fe885*/",tlcOutputsFcnOfS7B11,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B12)
+/* {S!d596}DiscreteStateSpace: '<S7>/Internal_3_4' */
+%<SLibCG_DumpSSCode("/*@[fe88d*/",tlcOutputsFcnOfS7B12,"/*@]*/")>\
+%endif
+/* {S!d598}Fcn: '<S9>/Fcn4' incorporates:
+ *  Sum: '<S7>/Sum3'
+ */
+/*@>ed3e5*/rtb_Fcn4/*@>db4bf*/ = ((/*@>ed806*/rtb_Fcn4/*@>db4ba*/ + /*@>ed804*/rtb_Sum2_p)/*@>db4bb*/ + /*@>ed802*/rtb_Sum3)/*@>db4bc*/ + /*@>ed800*/rtb_Internal_3_2;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B13)
+/* {S!d600}DiscreteStateSpace: '<S7>/Internal_4_1' */
+%<SLibCG_DumpSSCode("/*@[fe895*/",tlcOutputsFcnOfS7B13,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B14)
+/* {S!d602}DiscreteStateSpace: '<S7>/Internal_4_2' */
+%<SLibCG_DumpSSCode("/*@[fe89d*/",tlcOutputsFcnOfS7B14,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B15)
+/* {S!d604}DiscreteStateSpace: '<S7>/Internal_4_3' */
+%<SLibCG_DumpSSCode("/*@[fe8a5*/",tlcOutputsFcnOfS7B15,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B16)
+/* {S!d606}DiscreteStateSpace: '<S7>/Internal_4_4' */
+%<SLibCG_DumpSSCode("/*@[fe8ad*/",tlcOutputsFcnOfS7B16,"/*@]*/")>\
+%endif
+/* {S!d608}SignalConversion generated from: '<S4>/Gain10' incorporates:
+ *  Sum: '<S7>/Sum4'
+ */
+/*@>fc827*/LabB_ObserverAndControllerOve_B./*@>1059cb*/rtb_TmpSignalConversionAtGain_m/*@>e746f*/ = /*@>ed971*/rtb_Fcn3;
+/*@>fc82d*/LabB_ObserverAndControllerOve_B./*@>1059ce*/rtb_TmpSignalConversionAtGain_c/*@>e7481*/ = /*@>ed975*/rtb_Fcn4;
+/*@>fc833*/LabB_ObserverAndControllerOve_B./*@>1059d1*/rtb_TmpSignalConversionAtGain_k/*@>e748a*/ = ((/*@>f920e*/rtb_Sum2_p/*@>f920c*/ + /*@>f9210*/rtb_Sum3)/*@>f920b*/ + /*@>f9212*/rtb_Internal_3_2)/*@>e7490*/ + /*@>ed97d*/rtb_DataTypeConversion1;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B17)
+/* {S!d610}DiscreteStateSpace: '<S8>/Internal_1_1' */
+%<SLibCG_DumpSSCode("/*@[fe8b5*/",tlcOutputsFcnOfS7B17,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B18)
+/* {S!d612}DiscreteStateSpace: '<S8>/Internal_1_2' */
+%<SLibCG_DumpSSCode("/*@[fe8bd*/",tlcOutputsFcnOfS7B18,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B19)
+/* {S!d614}DiscreteStateSpace: '<S8>/Internal_1_3' */
+%<SLibCG_DumpSSCode("/*@[fe8c5*/",tlcOutputsFcnOfS7B19,"/*@]*/")>\
+%endif
+/* {S!d616}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  Sum: '<S8>/Sum1'
+ */
+/*@>ed3e3*/rtb_DataTypeConversion1/*@>db4cc*/ = (/*@>ed75e*/rtb_DataTypeConversion1/*@>db4c8*/ + /*@>ed75c*/rtb_Sum2_p)/*@>db4c9*/ + /*@>ed75a*/rtb_Sum3;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B20)
+/* {S!d618}DiscreteStateSpace: '<S8>/Internal_2_1' */
+%<SLibCG_DumpSSCode("/*@[fe8cd*/",tlcOutputsFcnOfS7B20,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B21)
+/* {S!d620}DiscreteStateSpace: '<S8>/Internal_2_2' */
+%<SLibCG_DumpSSCode("/*@[fe8d5*/",tlcOutputsFcnOfS7B21,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B22)
+/* {S!d622}DiscreteStateSpace: '<S8>/Internal_2_3' */
+%<SLibCG_DumpSSCode("/*@[fe8dd*/",tlcOutputsFcnOfS7B22,"/*@]*/")>\
+%endif
+/* {S!d624}Sum: '<S8>/Sum2' */
+/*@>ed3e1*/rtb_Sum2_p/*@>db4d2*/ = (/*@>f9217*/rtb_Sum2_p/*@>f9215*/ + /*@>f9219*/rtb_Sum3)/*@>f9214*/ + /*@>f921b*/rtb_Internal_3_2;
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B23)
+/* {S!d626}DiscreteStateSpace: '<S8>/Internal_3_1' */
+%<SLibCG_DumpSSCode("/*@[fe8e5*/",tlcOutputsFcnOfS7B23,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B24)
+/* {S!d628}DiscreteStateSpace: '<S8>/Internal_3_2' */
+%<SLibCG_DumpSSCode("/*@[fe8ed*/",tlcOutputsFcnOfS7B24,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS7B25)
+/* {S!d630}DiscreteStateSpace: '<S8>/Internal_3_3' */
+%<SLibCG_DumpSSCode("/*@[fe8f5*/",tlcOutputsFcnOfS7B25,"/*@]*/")>\
+%endif
+/* {S!d632}Sum: '<S8>/Sum3' */
+/*@>ed3df*/rtb_Sum3/*@>db4d8*/ = (/*@>ed6c8*/rtb_Sum3/*@>db4d4*/ + /*@>ed6c6*/rtb_Internal_3_2)/*@>db4d5*/ + /*@>ed6c4*/rtb_SaturationVsupplytoVsupply;
+/* {S!d634}Sum: '<S4>/Add1' incorporates:
+ *  Gain: '<S4>/Gain4'
+ */
+/*@>edb4f*/rtb_Add1_idx_0/*@>e749d*/ = /*@>fce0e*/LabB_ObserverAndControllerOve_P./*@>105b63*/Md5/*@>fbd10*/[/*@>fbd0d*/0]/*@>ee28b*/ * /*@>fc86f*/LabB_ObserverAndControllerOve_B./*@>1059d4*/converttometers/*@>e74a3*/ + /*@>ed981*/rtb_DataTypeConversion1;
+/*@>edb51*/rtb_Add1_idx_1/*@>e74af*/ = /*@>fce14*/LabB_ObserverAndControllerOve_P./*@>105b66*/Md5/*@>fbd15*/[/*@>fbd12*/1]/*@>ee287*/ * /*@>fc875*/LabB_ObserverAndControllerOve_B./*@>1059d7*/converttometers/*@>e74b5*/ + /*@>ed985*/rtb_Sum2_p;
+/*@>edb53*/rtb_Add1_idx_2/*@>e74c1*/ = /*@>fce1a*/LabB_ObserverAndControllerOve_P./*@>105b69*/Md5/*@>fbd1a*/[/*@>fbd17*/2]/*@>ee283*/ * /*@>fc87b*/LabB_ObserverAndControllerOve_B./*@>1059da*/converttometers/*@>e74c7*/ + /*@>ed989*/rtb_Sum3;
+/* {S!d636}Sum: '<S4>/Add2' incorporates:
+ *  Gain: '<S4>/Gain5'
+ *  Gain: '<S4>/Gain6'
+ *  Sum: '<S4>/Add1'
+ */
+/*@>e8720*/for (/*@>105408*/i = /*@>105407*/0; /*@>105412*/i < /*@>105410*/4; /*@>10540e*/i/*@>105416*/++) {
+    /*@>fc887*/LabB_ObserverAndControllerOve_B./*@>1059dd*/Add2/*@>e8734*/[/*@>eda0a*/i]/*@>e8735*/ = ((/*@>fce26*/LabB_ObserverAndControllerOve_P./*@>105b6f*/Md7/*@>fbd22*/[/*@>fbd1e*/i/*@>fbd1c*/ + /*@>fbd1f*/4]/*@>f0b81*/ * /*@>f0b8a*/rtb_Add1_idx_1/*@>f0b78*/ + /*@>fce2c*/LabB_ObserverAndControllerOve_P./*@>105b72*/Md7/*@>fbd28*/[/*@>fbd25*/i]/*@>f0b79*/ * /*@>f0b80*/rtb_Add1_idx_0)/*@>f0967*/ + /*@>fce32*/LabB_ObserverAndControllerOve_P./*@>105b75*/Md7/*@>fbd30*/[/*@>fbd2c*/i/*@>fbd2a*/ + /*@>fbd2d*/8]/*@>f096a*/ * /*@>f0973*/rtb_Add1_idx_2)/*@>e86df*/ + /*@>fce38*/LabB_ObserverAndControllerOve_P./*@>105b78*/Md6/*@>fbd36*/[/*@>fbd33*/i]/*@>ee29f*/ * /*@>fc88d*/LabB_ObserverAndControllerOve_B./*@>1059e0*/converttometers;
+}
+/* {E!d636}End of Sum: '<S4>/Add2' */
+
+/* {S!d640}ManualSwitch: '<S4>/Manual Switch1' incorporates:
+ *  DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)'
+ *  Gain: '<S4>/Gain8'
+ *  ManualSwitch: '<S4>/Manual Switch'
+ *  Sum: '<S4>/Add2'
+ *  Sum: '<S5>/Diff'
+ *  Sum: '<S6>/Diff'
+ *  UnitDelay: '<S5>/UD'
+ *  UnitDelay: '<S6>/UD'
+ *
+ * Block description for '<S5>/Diff':
+ *  
+ *  Add in CPU
+ *
+ * Block description for '<S6>/Diff':
+ *  
+ *  Add in CPU
+ *
+ * Block description for '<S5>/UD':
+ *  
+ *  Store in Global RAM
+ *
+ * Block description for '<S6>/UD':
+ *  
+ *  Store in Global RAM
+ */
+/*@>d90e6*/if (/*@>fce20*/LabB_ObserverAndControllerOve_P./*@>105b6c*/ManualSwitch1_CurrentSetting/*@>d90d9*/ == /*@>ed64d*/1) {
+    /*@>fc893*/LabB_ObserverAndControllerOve_B./*@>1059e3*/rtb_Gain8_idx_0/*@>e74d4*/ = /*@>fc899*/LabB_ObserverAndControllerOve_B./*@>1059e6*/converttometers;
+    /*@>edb49*/rtb_Gain8_idx_1/*@>e74dd*/ = /*@>fc8b1*/LabB_ObserverAndControllerOve_B./*@>1059f2*/TSamp/*@>e74e3*/ - /*@>fd137*/LabB_ObserverAndControlle_DWork./*@>105be4*/UD_DSTATE;
+    /*@>edb4b*/rtb_Gain8_idx_2/*@>e74e9*/ = /*@>fd13d*/LabB_ObserverAndControlle_DWork./*@>105be7*/DiscreteTimeIntegratorconvertfr;
+    /*@>edb4d*/rtb_Gain8_idx_3/*@>e74f2*/ = /*@>fc8c9*/LabB_ObserverAndControllerOve_B./*@>1059fe*/TSamp_n/*@>e74f8*/ - /*@>fd143*/LabB_ObserverAndControlle_DWork./*@>105bea*/UD_DSTATE_o;
+} else /*@>eb87c*/if (/*@>fce3e*/LabB_ObserverAndControllerOve_P./*@>105b7b*/ManualSwitch_CurrentSetting/*@>e7507*/ == /*@>ed999*/1) {
+    /* {S!d638}ManualSwitch: '<S4>/Manual Switch' incorporates:
+ *  Gain: '<S4>/Gain8'
+ *  SignalConversion generated from: '<S4>/Gain10'
+ */
+    /*@>fc8ab*/LabB_ObserverAndControllerOve_B./*@>1059ef*/rtb_Gain8_idx_0/*@>ebac0*/ = /*@>f0977*/rtb_Fcn3;
+    /*@>edb7f*/rtb_Gain8_idx_1/*@>ebace*/ = /*@>fc8bd*/LabB_ObserverAndControllerOve_B./*@>1059f8*/Sum2;
+    /*@>edb83*/rtb_Gain8_idx_2/*@>ebadc*/ = /*@>f097b*/rtb_Fcn4;
+    /*@>edb87*/rtb_Gain8_idx_3/*@>ebaea*/ = /*@>fc8d5*/LabB_ObserverAndControllerOve_B./*@>105a04*/rtb_TmpSignalConversionAtGain_k;
+} else {
+    /*@>fc89f*/LabB_ObserverAndControllerOve_B./*@>1059e9*/rtb_Gain8_idx_0/*@>ebafd*/ = /*@>fc8a5*/LabB_ObserverAndControllerOve_B./*@>1059ec*/Add2/*@>fbd3b*/[/*@>fbd38*/0];
+    /*@>edb8d*/rtb_Gain8_idx_1/*@>ebb0b*/ = /*@>fc8b7*/LabB_ObserverAndControllerOve_B./*@>1059f5*/Add2/*@>fbd40*/[/*@>fbd3d*/1];
+    /*@>edb8f*/rtb_Gain8_idx_2/*@>ebb19*/ = /*@>fc8c3*/LabB_ObserverAndControllerOve_B./*@>1059fb*/Add2/*@>fbd45*/[/*@>fbd42*/2];
+    /*@>edb91*/rtb_Gain8_idx_3/*@>ebb27*/ = /*@>fc8cf*/LabB_ObserverAndControllerOve_B./*@>105a01*/Add2/*@>fbd4a*/[/*@>fbd47*/3];
+}
+/* {E!d640}End of ManualSwitch: '<S4>/Manual Switch1' */
+
+/* {S!d642}Saturate: '<S53>/Saturation -Vsupply to Vsupply' incorporates:
+ *  DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)'
+ *  Fcn: '<S1>/turn off the motor if the measured angle is greater than X degrees'
+ *  Gain: '<S1>/controller'
+ *  Gain: '<S4>/Gain8'
+ *  Product: '<S1>/Product1'
+ */
+/*@>ed6c2*/rtb_SaturationVsupplytoVsupply/*@>d849f*/ = ((/*@>fce44*/LabB_ObserverAndControllerOve_P./*@>105b7e*/controller_Gain/*@>fbd4f*/[/*@>fbd4c*/0]/*@>f0dca*/ * /*@>fc8db*/LabB_ObserverAndControllerOve_B./*@>105a07*/rtb_Gain8_idx_0/*@>f0dc9*/ + /*@>fce4a*/LabB_ObserverAndControllerOve_P./*@>105b81*/controller_Gain/*@>fbd54*/[/*@>fbd51*/1]/*@>f0dd1*/ * /*@>f0dd7*/rtb_Gain8_idx_1)/*@>f0ba4*/ + /*@>fce50*/LabB_ObserverAndControllerOve_P./*@>105b84*/controller_Gain/*@>fbd59*/[/*@>fbd56*/2]/*@>f0ba7*/ * /*@>f0bad*/rtb_Gain8_idx_2)/*@>f0ba3*/ + /*@>fce56*/LabB_ObserverAndControllerOve_P./*@>105b87*/controller_Gain/*@>fbd5e*/[/*@>fbd5b*/3]/*@>f0bae*/ * /*@>f0bb4*/rtb_Gain8_idx_3;
+/*@>ed6be*/rtb_SaturationVsupplytoVsupply/*@>105417*/ *= /*@>ef537*/(real32_T)(/*@>f7497*/(real32_T)/*@>fa3c6*/fabs(/*@>fd149*/LabB_ObserverAndControlle_DWork./*@>105bed*/DiscreteTimeIntegratorconvertfr)/*@>e53aa*/ < /*@>ed94b*/0.75F);
+/* {S!d644}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  Fcn: '<S9>/Fcn'
+ */
+/*@>ed6b8*/rtb_DataTypeConversion1/*@>d84c0*/ = (/*@>ed6bc*/rtb_SaturationVsupplytoVsupply/*@>d84bd*/ + /*@>ed6bb*/10.0F)/*@>ee26b*/ * /*@>ed6ba*/3276.8F;
+/* {S!d646}DataTypeConversion: '<S9>/Data Type Conversion' */
+/*@>fc8e1*/LabB_ObserverAndControllerOve_B./*@>105a0a*/rtb_Gain8_idx_0/*@>ee22b*/ = /*@>f7528*/(real32_T)/*@>fa3c8*/floor(/*@>ed6b6*/rtb_DataTypeConversion1);
+/*@>f1a65*/if (/*@>fa3ca*/rtIsNaNF(/*@>fc8e7*/LabB_ObserverAndControllerOve_B./*@>105a0d*/rtb_Gain8_idx_0)/*@>ee237*/ || /*@>fa3cc*/rtIsInfF(/*@>fc8ed*/LabB_ObserverAndControllerOve_B./*@>105a10*/rtb_Gain8_idx_0)) {
+    /*@>fc8ff*/LabB_ObserverAndControllerOve_B./*@>105a19*/rtb_Gain8_idx_0/*@>f1a68*/ = /*@>ee239*/0.0F;
+} else {
+    /*@>fc8f3*/LabB_ObserverAndControllerOve_B./*@>105a13*/rtb_Gain8_idx_0/*@>ee23c*/ = /*@>f7534*/(real32_T)/*@>fa3ce*/fmod(/*@>fc8f9*/LabB_ObserverAndControllerOve_B./*@>105a16*/rtb_Gain8_idx_0, /*@>fd32d*/65536.0);
+}
+/*@>ed6b4*/rtb_DataTypeConversion6/*@>d84c3*/ = /*@>fc905*/LabB_ObserverAndControllerOve_B./*@>105a1c*/rtb_Gain8_idx_0/*@>ee253*/ < /*@>ee24f*/0.0F/*@>ee253*/ ? /*@>ee25b*/(uint16_T)-/*@<ee25a*//*@>ee259*/(int16_T)/*@>ee264*/(uint16_T)-/*@<ee257*//*@>fc90b*/LabB_ObserverAndControllerOve_B./*@>105a1f*/rtb_Gain8_idx_0 : /*@>ee267*/(uint16_T)/*@>fc911*/LabB_ObserverAndControllerOve_B./*@>105a22*/rtb_Gain8_idx_0;
+/* {E!d646}End of DataTypeConversion: '<S9>/Data Type Conversion' */
+
+/* {S!d648}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  DataTypeConversion: '<S39>/Extract Desired Bits'
+ *  DataTypeConversion: '<S40>/Extract Desired Bits'
+ */
+/*@>fc917*/LabB_ObserverAndControllerOve_B./*@>105a25*/dataIn/*@>f223f*/[/*@>f2241*/1]/*@>d84c7*/ = /*@>ef547*/(uint8_T)(/*@>ed6b2*/rtb_DataTypeConversion6/*@>ee221*/ >> /*@>ee220*/8);
+/*@>fc91d*/LabB_ObserverAndControllerOve_B./*@>105a28*/dataIn/*@>f2242*/[/*@>f2244*/2]/*@>d84cb*/ = /*@>ee217*/(uint8_T)/*@>ed6b0*/rtb_DataTypeConversion6;
+/* {S!d650}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  Fcn: '<S9>/Fcn1'
+ */
+/*@>ed6a8*/rtb_DataTypeConversion1/*@>d84d3*/ = (/*@>fc923*/LabB_ObserverAndControllerOve_B./*@>105a2b*/converttometers/*@>d84d0*/ + /*@>ed6ab*/10.0F)/*@>ee214*/ * /*@>ed6aa*/3276.8F;
+/* {S!d652}DataTypeConversion: '<S9>/Data Type Conversion1' */
+/*@>fc929*/LabB_ObserverAndControllerOve_B./*@>105a2e*/rtb_Gain8_idx_0/*@>ee1d4*/ = /*@>f7517*/(real32_T)/*@>fa3d0*/floor(/*@>ed6a6*/rtb_DataTypeConversion1);
+/*@>f1a6a*/if (/*@>fa3d2*/rtIsNaNF(/*@>fc92f*/LabB_ObserverAndControllerOve_B./*@>105a31*/rtb_Gain8_idx_0)/*@>ee1e0*/ || /*@>fa3d4*/rtIsInfF(/*@>fc935*/LabB_ObserverAndControllerOve_B./*@>105a34*/rtb_Gain8_idx_0)) {
+    /*@>fc947*/LabB_ObserverAndControllerOve_B./*@>105a3d*/rtb_Gain8_idx_0/*@>f1a6d*/ = /*@>ee1e2*/0.0F;
+} else {
+    /*@>fc93b*/LabB_ObserverAndControllerOve_B./*@>105a37*/rtb_Gain8_idx_0/*@>ee1e5*/ = /*@>f7523*/(real32_T)/*@>fa3d6*/fmod(/*@>fc941*/LabB_ObserverAndControllerOve_B./*@>105a3a*/rtb_Gain8_idx_0, /*@>fd32f*/65536.0);
+}
+/*@>ed6a4*/rtb_DataTypeConversion6/*@>d84d6*/ = /*@>fc94d*/LabB_ObserverAndControllerOve_B./*@>105a40*/rtb_Gain8_idx_0/*@>ee1fc*/ < /*@>ee1f8*/0.0F/*@>ee1fc*/ ? /*@>ee204*/(uint16_T)-/*@<ee203*//*@>ee202*/(int16_T)/*@>ee20d*/(uint16_T)-/*@<ee200*//*@>fc953*/LabB_ObserverAndControllerOve_B./*@>105a43*/rtb_Gain8_idx_0 : /*@>ee210*/(uint16_T)/*@>fc959*/LabB_ObserverAndControllerOve_B./*@>105a46*/rtb_Gain8_idx_0;
+/* {E!d652}End of DataTypeConversion: '<S9>/Data Type Conversion1' */
+
+/* {S!d654}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  DataTypeConversion: '<S45>/Extract Desired Bits'
+ *  DataTypeConversion: '<S46>/Extract Desired Bits'
+ */
+/*@>fc95f*/LabB_ObserverAndControllerOve_B./*@>105a49*/dataIn/*@>f2245*/[/*@>f2247*/3]/*@>d84da*/ = /*@>ef559*/(uint8_T)(/*@>ed6a2*/rtb_DataTypeConversion6/*@>ee1ca*/ >> /*@>ee1c9*/8);
+/*@>fc965*/LabB_ObserverAndControllerOve_B./*@>105a4c*/dataIn/*@>f2248*/[/*@>f224a*/4]/*@>d84de*/ = /*@>ee1c0*/(uint8_T)/*@>ed6a0*/rtb_DataTypeConversion6;
+/* {S!d656}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)'
+ *  Fcn: '<S9>/Fcn2'
+ */
+/*@>ed69a*/rtb_DataTypeConversion1/*@>d84e6*/ = (/*@>fd14f*/LabB_ObserverAndControlle_DWork./*@>105bf0*/DiscreteTimeIntegratorconvertfr/*@>d84e3*/ + /*@>ed69d*/10.0F)/*@>ee1bd*/ * /*@>ed69c*/3276.8F;
+/* {S!d658}DataTypeConversion: '<S9>/Data Type Conversion2' */
+/*@>fc96b*/LabB_ObserverAndControllerOve_B./*@>105a4f*/rtb_Gain8_idx_0/*@>ee17d*/ = /*@>f7506*/(real32_T)/*@>fa3d8*/floor(/*@>ed698*/rtb_DataTypeConversion1);
+/*@>f1a6f*/if (/*@>fa3da*/rtIsNaNF(/*@>fc971*/LabB_ObserverAndControllerOve_B./*@>105a52*/rtb_Gain8_idx_0)/*@>ee189*/ || /*@>fa3dc*/rtIsInfF(/*@>fc977*/LabB_ObserverAndControllerOve_B./*@>105a55*/rtb_Gain8_idx_0)) {
+    /*@>fc989*/LabB_ObserverAndControllerOve_B./*@>105a5e*/rtb_Gain8_idx_0/*@>f1a72*/ = /*@>ee18b*/0.0F;
+} else {
+    /*@>fc97d*/LabB_ObserverAndControllerOve_B./*@>105a58*/rtb_Gain8_idx_0/*@>ee18e*/ = /*@>f7512*/(real32_T)/*@>fa3de*/fmod(/*@>fc983*/LabB_ObserverAndControllerOve_B./*@>105a5b*/rtb_Gain8_idx_0, /*@>fd331*/65536.0);
+}
+/*@>ed696*/rtb_DataTypeConversion6/*@>d84e9*/ = /*@>fc98f*/LabB_ObserverAndControllerOve_B./*@>105a61*/rtb_Gain8_idx_0/*@>ee1a5*/ < /*@>ee1a1*/0.0F/*@>ee1a5*/ ? /*@>ee1ad*/(uint16_T)-/*@<ee1ac*//*@>ee1ab*/(int16_T)/*@>ee1b6*/(uint16_T)-/*@<ee1a9*//*@>fc995*/LabB_ObserverAndControllerOve_B./*@>105a64*/rtb_Gain8_idx_0 : /*@>ee1b9*/(uint16_T)/*@>fc99b*/LabB_ObserverAndControllerOve_B./*@>105a67*/rtb_Gain8_idx_0;
+/* {E!d658}End of DataTypeConversion: '<S9>/Data Type Conversion2' */
+
+/* {S!d660}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  DataTypeConversion: '<S47>/Extract Desired Bits'
+ *  DataTypeConversion: '<S48>/Extract Desired Bits'
+ */
+/*@>fc9a1*/LabB_ObserverAndControllerOve_B./*@>105a6a*/dataIn/*@>f224b*/[/*@>f224d*/5]/*@>d84ed*/ = /*@>ef56b*/(uint8_T)(/*@>ed694*/rtb_DataTypeConversion6/*@>ee173*/ >> /*@>ee172*/8);
+/*@>fc9a7*/LabB_ObserverAndControllerOve_B./*@>105a6d*/dataIn/*@>f224e*/[/*@>f2250*/6]/*@>d84f1*/ = /*@>ee169*/(uint8_T)/*@>ed692*/rtb_DataTypeConversion6;
+/* {S!d662}Fcn: '<S9>/Fcn3' */
+/*@>ed68a*/rtb_Fcn3/*@>d84f9*/ = (/*@>ed68e*/rtb_Fcn3/*@>d84f6*/ + /*@>ed68d*/10.0F)/*@>ee166*/ * /*@>ed68c*/3276.8F;
+/* {S!d664}DataTypeConversion: '<S9>/Data Type Conversion3' */
+/*@>fc9ad*/LabB_ObserverAndControllerOve_B./*@>105a70*/rtb_Gain8_idx_0/*@>ee126*/ = /*@>f74f5*/(real32_T)/*@>fa3e0*/floor(/*@>ed688*/rtb_Fcn3);
+/*@>f1a74*/if (/*@>fa3e2*/rtIsNaNF(/*@>fc9b3*/LabB_ObserverAndControllerOve_B./*@>105a73*/rtb_Gain8_idx_0)/*@>ee132*/ || /*@>fa3e4*/rtIsInfF(/*@>fc9b9*/LabB_ObserverAndControllerOve_B./*@>105a76*/rtb_Gain8_idx_0)) {
+    /*@>fc9cb*/LabB_ObserverAndControllerOve_B./*@>105a7f*/rtb_Gain8_idx_0/*@>f1a77*/ = /*@>ee134*/0.0F;
+} else {
+    /*@>fc9bf*/LabB_ObserverAndControllerOve_B./*@>105a79*/rtb_Gain8_idx_0/*@>ee137*/ = /*@>f7501*/(real32_T)/*@>fa3e6*/fmod(/*@>fc9c5*/LabB_ObserverAndControllerOve_B./*@>105a7c*/rtb_Gain8_idx_0, /*@>fd333*/65536.0);
+}
+/*@>ed686*/rtb_DataTypeConversion6/*@>d84fc*/ = /*@>fc9d1*/LabB_ObserverAndControllerOve_B./*@>105a82*/rtb_Gain8_idx_0/*@>ee14e*/ < /*@>ee14a*/0.0F/*@>ee14e*/ ? /*@>ee156*/(uint16_T)-/*@<ee155*//*@>ee154*/(int16_T)/*@>ee15f*/(uint16_T)-/*@<ee152*//*@>fc9d7*/LabB_ObserverAndControllerOve_B./*@>105a85*/rtb_Gain8_idx_0 : /*@>ee162*/(uint16_T)/*@>fc9dd*/LabB_ObserverAndControllerOve_B./*@>105a88*/rtb_Gain8_idx_0;
+/* {E!d664}End of DataTypeConversion: '<S9>/Data Type Conversion3' */
+
+/* {S!d666}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  DataTypeConversion: '<S49>/Extract Desired Bits'
+ *  DataTypeConversion: '<S50>/Extract Desired Bits'
+ */
+/*@>fc9e3*/LabB_ObserverAndControllerOve_B./*@>105a8b*/dataIn/*@>f2251*/[/*@>f2253*/7]/*@>d8500*/ = /*@>ef57d*/(uint8_T)(/*@>ed684*/rtb_DataTypeConversion6/*@>ee11c*/ >> /*@>ee11b*/8);
+/*@>fc9e9*/LabB_ObserverAndControllerOve_B./*@>105a8e*/dataIn/*@>f2254*/[/*@>f2256*/8]/*@>d8504*/ = /*@>ee112*/(uint8_T)/*@>ed682*/rtb_DataTypeConversion6;
+/* {S!d668}Fcn: '<S9>/Fcn4' */
+/*@>ed67a*/rtb_Fcn4/*@>d850c*/ = (/*@>ed67e*/rtb_Fcn4/*@>d8509*/ + /*@>ed67d*/10.0F)/*@>ee10f*/ * /*@>ed67c*/3276.8F;
+/* {S!d670}DataTypeConversion: '<S9>/Data Type Conversion4' */
+/*@>fc9ef*/LabB_ObserverAndControllerOve_B./*@>105a91*/rtb_Gain8_idx_0/*@>ee0cf*/ = /*@>f74e4*/(real32_T)/*@>fa3e8*/floor(/*@>ed678*/rtb_Fcn4);
+/*@>f1a79*/if (/*@>fa3ea*/rtIsNaNF(/*@>fc9f5*/LabB_ObserverAndControllerOve_B./*@>105a94*/rtb_Gain8_idx_0)/*@>ee0db*/ || /*@>fa3ec*/rtIsInfF(/*@>fc9fb*/LabB_ObserverAndControllerOve_B./*@>105a97*/rtb_Gain8_idx_0)) {
+    /*@>fca0d*/LabB_ObserverAndControllerOve_B./*@>105aa0*/rtb_Gain8_idx_0/*@>f1a7c*/ = /*@>ee0dd*/0.0F;
+} else {
+    /*@>fca01*/LabB_ObserverAndControllerOve_B./*@>105a9a*/rtb_Gain8_idx_0/*@>ee0e0*/ = /*@>f74f0*/(real32_T)/*@>fa3ee*/fmod(/*@>fca07*/LabB_ObserverAndControllerOve_B./*@>105a9d*/rtb_Gain8_idx_0, /*@>fd335*/65536.0);
+}
+/*@>ed676*/rtb_DataTypeConversion6/*@>d850f*/ = /*@>fca13*/LabB_ObserverAndControllerOve_B./*@>105aa3*/rtb_Gain8_idx_0/*@>ee0f7*/ < /*@>ee0f3*/0.0F/*@>ee0f7*/ ? /*@>ee0ff*/(uint16_T)-/*@<ee0fe*//*@>ee0fd*/(int16_T)/*@>ee108*/(uint16_T)-/*@<ee0fb*//*@>fca19*/LabB_ObserverAndControllerOve_B./*@>105aa6*/rtb_Gain8_idx_0 : /*@>ee10b*/(uint16_T)/*@>fca1f*/LabB_ObserverAndControllerOve_B./*@>105aa9*/rtb_Gain8_idx_0;
+/* {E!d670}End of DataTypeConversion: '<S9>/Data Type Conversion4' */
+
+/* {S!d672}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  DataTypeConversion: '<S51>/Extract Desired Bits'
+ *  DataTypeConversion: '<S52>/Extract Desired Bits'
+ */
+/*@>fca25*/LabB_ObserverAndControllerOve_B./*@>105aac*/dataIn/*@>f2257*/[/*@>f2259*/9]/*@>d8513*/ = /*@>ef58f*/(uint8_T)(/*@>ed674*/rtb_DataTypeConversion6/*@>ee0c5*/ >> /*@>ee0c4*/8);
+/*@>fca2b*/LabB_ObserverAndControllerOve_B./*@>105aaf*/dataIn/*@>f225a*/[/*@>f225c*/10]/*@>d8517*/ = /*@>ee0bb*/(uint8_T)/*@>ed672*/rtb_DataTypeConversion6;
+/* {S!d674}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  Fcn: '<S9>/Fcn5'
+ */
+/*@>ed66c*/rtb_DataTypeConversion1/*@>d851f*/ = (/*@>fca31*/LabB_ObserverAndControllerOve_B./*@>105ab2*/Add2/*@>fbd63*/[/*@>fbd60*/0]/*@>d851c*/ + /*@>ed66f*/10.0F)/*@>ee0b8*/ * /*@>ed66e*/3276.8F;
+/* {S!d676}DataTypeConversion: '<S9>/Data Type Conversion5' */
+/*@>fca37*/LabB_ObserverAndControllerOve_B./*@>105ab5*/rtb_Gain8_idx_0/*@>ee078*/ = /*@>f74d3*/(real32_T)/*@>fa3f0*/floor(/*@>ed66a*/rtb_DataTypeConversion1);
+/*@>f1a7e*/if (/*@>fa3f2*/rtIsNaNF(/*@>fca3d*/LabB_ObserverAndControllerOve_B./*@>105ab8*/rtb_Gain8_idx_0)/*@>ee084*/ || /*@>fa3f4*/rtIsInfF(/*@>fca43*/LabB_ObserverAndControllerOve_B./*@>105abb*/rtb_Gain8_idx_0)) {
+    /*@>fca55*/LabB_ObserverAndControllerOve_B./*@>105ac4*/rtb_Gain8_idx_0/*@>f1a81*/ = /*@>ee086*/0.0F;
+} else {
+    /*@>fca49*/LabB_ObserverAndControllerOve_B./*@>105abe*/rtb_Gain8_idx_0/*@>ee089*/ = /*@>f74df*/(real32_T)/*@>fa3f6*/fmod(/*@>fca4f*/LabB_ObserverAndControllerOve_B./*@>105ac1*/rtb_Gain8_idx_0, /*@>fd337*/65536.0);
+}
+/*@>ed668*/rtb_DataTypeConversion6/*@>d8522*/ = /*@>fca5b*/LabB_ObserverAndControllerOve_B./*@>105ac7*/rtb_Gain8_idx_0/*@>ee0a0*/ < /*@>ee09c*/0.0F/*@>ee0a0*/ ? /*@>ee0a8*/(uint16_T)-/*@<ee0a7*//*@>ee0a6*/(int16_T)/*@>ee0b1*/(uint16_T)-/*@<ee0a4*//*@>fca61*/LabB_ObserverAndControllerOve_B./*@>105aca*/rtb_Gain8_idx_0 : /*@>ee0b4*/(uint16_T)/*@>fca67*/LabB_ObserverAndControllerOve_B./*@>105acd*/rtb_Gain8_idx_0;
+/* {E!d676}End of DataTypeConversion: '<S9>/Data Type Conversion5' */
+
+/* {S!d678}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  DataTypeConversion: '<S41>/Extract Desired Bits'
+ *  DataTypeConversion: '<S42>/Extract Desired Bits'
+ */
+/*@>fca6d*/LabB_ObserverAndControllerOve_B./*@>105ad0*/dataIn/*@>f225d*/[/*@>f225f*/11]/*@>d8526*/ = /*@>ef5a1*/(uint8_T)(/*@>ed666*/rtb_DataTypeConversion6/*@>ee06e*/ >> /*@>ee06d*/8);
+/*@>fca73*/LabB_ObserverAndControllerOve_B./*@>105ad3*/dataIn/*@>f2260*/[/*@>f2262*/12]/*@>d852a*/ = /*@>ee064*/(uint8_T)/*@>ed664*/rtb_DataTypeConversion6;
+/* {S!d680}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  Fcn: '<S9>/Fcn6'
+ */
+/*@>ed65e*/rtb_DataTypeConversion1/*@>d8532*/ = (/*@>fca79*/LabB_ObserverAndControllerOve_B./*@>105ad6*/Add2/*@>fbd68*/[/*@>fbd65*/2]/*@>d852f*/ + /*@>ed661*/10.0F)/*@>ee061*/ * /*@>ed660*/3276.8F;
+/* {S!d682}DataTypeConversion: '<S9>/Data Type Conversion6' */
+/*@>fca7f*/LabB_ObserverAndControllerOve_B./*@>105ad9*/rtb_Gain8_idx_0/*@>ee021*/ = /*@>f74c2*/(real32_T)/*@>fa3f8*/floor(/*@>ed65c*/rtb_DataTypeConversion1);
+/*@>f1a83*/if (/*@>fa3fa*/rtIsNaNF(/*@>fca85*/LabB_ObserverAndControllerOve_B./*@>105adc*/rtb_Gain8_idx_0)/*@>ee02d*/ || /*@>fa3fc*/rtIsInfF(/*@>fca8b*/LabB_ObserverAndControllerOve_B./*@>105adf*/rtb_Gain8_idx_0)) {
+    /*@>fca9d*/LabB_ObserverAndControllerOve_B./*@>105ae8*/rtb_Gain8_idx_0/*@>f1a86*/ = /*@>ee02f*/0.0F;
+} else {
+    /*@>fca91*/LabB_ObserverAndControllerOve_B./*@>105ae2*/rtb_Gain8_idx_0/*@>ee032*/ = /*@>f74ce*/(real32_T)/*@>fa3fe*/fmod(/*@>fca97*/LabB_ObserverAndControllerOve_B./*@>105ae5*/rtb_Gain8_idx_0, /*@>fd339*/65536.0);
+}
+/*@>ed65a*/rtb_DataTypeConversion6/*@>d8535*/ = /*@>fcaa3*/LabB_ObserverAndControllerOve_B./*@>105aeb*/rtb_Gain8_idx_0/*@>ee049*/ < /*@>ee045*/0.0F/*@>ee049*/ ? /*@>ee051*/(uint16_T)-/*@<ee050*//*@>ee04f*/(int16_T)/*@>ee05a*/(uint16_T)-/*@<ee04d*//*@>fcaa9*/LabB_ObserverAndControllerOve_B./*@>105aee*/rtb_Gain8_idx_0 : /*@>ee05d*/(uint16_T)/*@>fcaaf*/LabB_ObserverAndControllerOve_B./*@>105af1*/rtb_Gain8_idx_0;
+/* {E!d682}End of DataTypeConversion: '<S9>/Data Type Conversion6' */
+
+/* {S!d684}MATLABSystem: '<S9>/Serial Transmit' incorporates:
+ *  Constant: '<S9>/Constant'
+ *  DataTypeConversion: '<S43>/Extract Desired Bits'
+ *  DataTypeConversion: '<S44>/Extract Desired Bits'
+ */
+/*@>d967f*/if (/*@>fd155*/LabB_ObserverAndControlle_DWork./*@>105bf3*/obj.Protocol/*@>d9677*/ != /*@>fce5c*/LabB_ObserverAndControllerOve_P./*@>105b8a*/SerialTransmit_Protocol) {
+    /*@>fd15b*/LabB_ObserverAndControlle_DWork./*@>105bf6*/obj./*@>1059b3*/Protocol/*@>d9673*/ = /*@>fce62*/LabB_ObserverAndControllerOve_P./*@>105b8d*/SerialTransmit_Protocol;
+}
+/*@>fcab5*/LabB_ObserverAndControllerOve_B./*@>105af4*/dataIn/*@>e7527*/[/*@>ed99a*/0]/*@>e7526*/ = /*@>fce68*/LabB_ObserverAndControllerOve_P./*@>105b90*/Constant_Value_d;
+/*@>fcabb*/LabB_ObserverAndControllerOve_B./*@>105af7*/dataIn/*@>e759c*/[/*@>ed9c1*/13]/*@>e759b*/ = /*@>ef5e0*/(uint8_T)(/*@>ed9c2*/rtb_DataTypeConversion6/*@>ee017*/ >> /*@>ee016*/8);
+/*@>fcac1*/LabB_ObserverAndControllerOve_B./*@>105afa*/dataIn/*@>e75a7*/[/*@>ed9c4*/14]/*@>e75a6*/ = /*@>ee00d*/(uint8_T)/*@>ed9c5*/rtb_DataTypeConversion6;
+/*@>fa400*/MW_Serial_write(/*@>fd161*/LabB_ObserverAndControlle_DWork./*@>105bf9*/obj.port, &/*@>fcac7*/LabB_ObserverAndControllerOve_B./*@>105afd*/dataIn/*@>d97e2*/[/*@>ed3f8*/0], /*@>ed93d*/15.0, /*@>fd167*/LabB_ObserverAndControlle_DWork./*@>105bfc*/obj.dataSizeInBytes, /*@>fd16d*/LabB_ObserverAndControlle_DWork./*@>105bff*/obj.sendModeEnum, /*@>fd173*/LabB_ObserverAndControlle_DWork./*@>105c02*/obj.dataType, /*@>fd179*/LabB_ObserverAndControlle_DWork./*@>105c05*/obj.sendFormatEnum, /*@>ed3cd*/2.0, /*@>ed3cc*/'\x00');
+/*@>e8940*/for (/*@>1053f7*/i = /*@>1053f6*/0; /*@>105401*/i < /*@>1053ff*/3; /*@>1053fd*/i/*@>105418*/++) {
+    /* {S!d686}Sum: '<S4>/Add' incorporates:
+ *  DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)'
+ *  Gain: '<S4>/Gain'
+ *  Gain: '<S4>/Gain1'
+ *  Gain: '<S4>/Gain2'
+ *  Gain: '<S4>/Gain3'
+ *  Sum: '<S4>/Add1'
+ */
+    /*@>fcad9*/LabB_ObserverAndControllerOve_B./*@>105b00*/Add/*@>e8954*/[/*@>eda2f*/i]/*@>e8955*/ = ((/*@>fce6e*/LabB_ObserverAndControllerOve_P./*@>105b93*/Md1/*@>fbd70*/[/*@>fbd6c*/i/*@>fbd6a*/ + /*@>fbd6d*/3]/*@>f0c18*/ * /*@>f0c21*/rtb_Add1_idx_1/*@>f0c0f*/ + /*@>fce74*/LabB_ObserverAndControllerOve_P./*@>105b96*/Md1/*@>fbd76*/[/*@>fbd73*/i]/*@>f0c10*/ * /*@>f0c17*/rtb_Add1_idx_0)/*@>f0a15*/ + /*@>fce7a*/LabB_ObserverAndControllerOve_P./*@>105b99*/Md1/*@>fbd7e*/[/*@>fbd7a*/i/*@>fbd78*/ + /*@>fbd7b*/6]/*@>f0a18*/ * /*@>f0a21*/rtb_Add1_idx_2)/*@>e88ef*/ + ((/*@>fce80*/LabB_ObserverAndControllerOve_P./*@>105b9c*/Md4/*@>fbd84*/[/*@>fbd81*/i]/*@>ee2af*/ * /*@>fd17f*/LabB_ObserverAndControlle_DWork./*@>105c08*/DiscreteTimeIntegratorconvertfr/*@>e88f1*/ + /*@>fce86*/LabB_ObserverAndControllerOve_P./*@>105b9f*/Md3/*@>fbd8a*/[/*@>fbd87*/i]/*@>ee2b3*/ * /*@>fcadf*/LabB_ObserverAndControllerOve_B./*@>105b03*/converttometers)/*@>e88f0*/ + /*@>fce8c*/LabB_ObserverAndControllerOve_P./*@>105ba2*/Md2/*@>fbd90*/[/*@>fbd8d*/i]/*@>ee2b7*/ * /*@>ed95f*/rtb_SaturationVsupplytoVsupply);
+}
+/* {S!d688}Gain: '<S4>/Gain10' incorporates:
+ *  SignalConversion generated from: '<S4>/Gain10'
+ */
+/*@>e89cb*/for (/*@>1053e6*/i = /*@>1053e5*/0; /*@>1053f0*/i < /*@>1053ee*/2; /*@>1053ec*/i/*@>105419*/++) {
+    /*@>fcaf7*/LabB_ObserverAndControllerOve_B./*@>105b0c*/Sum_h/*@>e9bed*/[/*@>eda77*/i]/*@>e9bf3*/ = ((/*@>fce92*/LabB_ObserverAndControllerOve_P./*@>105ba5*/Cd/*@>fbd9d*/[/*@>fbd99*/i/*@>fbd97*/ + /*@>fbd9a*/2]/*@>f0e3c*/ * /*@>fcafd*/LabB_ObserverAndControllerOve_B./*@>105b0f*/Sum2/*@>f0e33*/ + /*@>fce98*/LabB_ObserverAndControllerOve_P./*@>105ba8*/Cd/*@>fbda3*/[/*@>fbda0*/i]/*@>f0e34*/ * /*@>fcb03*/LabB_ObserverAndControllerOve_B./*@>105b12*/rtb_TmpSignalConversionAtGain_m)/*@>f0c39*/ + /*@>fce9e*/LabB_ObserverAndControllerOve_P./*@>105bab*/Cd/*@>fbdab*/[/*@>fbda7*/i/*@>fbda5*/ + /*@>fbda8*/4]/*@>f0c3c*/ * /*@>fcb09*/LabB_ObserverAndControllerOve_B./*@>105b15*/rtb_TmpSignalConversionAtGain_c)/*@>f0c38*/ + /*@>fcea4*/LabB_ObserverAndControllerOve_P./*@>105bae*/Cd/*@>fbdb3*/[/*@>fbdaf*/i/*@>fbdad*/ + /*@>fbdb0*/6]/*@>f0c46*/ * /*@>fcb0f*/LabB_ObserverAndControllerOve_B./*@>105b18*/rtb_TmpSignalConversionAtGain_k;
+}
+/* {E!d688}End of Gain: '<S4>/Gain10' */
+
+/* {S!d690}Sum: '<S4>/Sum' incorporates:
+ *  DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)'
+ */
+/*@>fcae5*/LabB_ObserverAndControllerOve_B./*@>105b06*/converttometers/*@>10541a*/ -= /*@>fcaf1*/LabB_ObserverAndControllerOve_B./*@>105b09*/Sum_h/*@>fbd95*/[/*@>fbd92*/0];
+/*@>edb57*/rtb_Add1_idx_0/*@>e8a7b*/ = /*@>fd185*/LabB_ObserverAndControlle_DWork./*@>105c0b*/DiscreteTimeIntegratorconvertfr/*@>e8a54*/ - /*@>fcb15*/LabB_ObserverAndControllerOve_B./*@>105b1b*/Sum_h/*@>fbdb8*/[/*@>fbdb5*/1];
+/*@>e8af1*/for (/*@>1053d5*/i = /*@>1053d4*/0; /*@>1053df*/i < /*@>1053dd*/4; /*@>1053db*/i/*@>10541b*/++) {
+    /* {S!d692}Sum: '<S4>/Add3' incorporates:
+ *  Gain: '<S4>/Gain7'
+ *  Gain: '<S4>/Gain8'
+ *  Gain: '<S4>/Gain9'
+ *  SignalConversion generated from: '<S4>/Gain10'
+ */
+    /*@>fcb21*/LabB_ObserverAndControllerOve_B./*@>105b1e*/Add3/*@>e8bd7*/[/*@>eda54*/i]/*@>e8bd8*/ = (((/*@>fceaa*/LabB_ObserverAndControllerOve_P./*@>105bb1*/Ad/*@>fbdc0*/[/*@>fbdbc*/i/*@>fbdba*/ + /*@>fbdbd*/4]/*@>f0e52*/ * /*@>fcb27*/LabB_ObserverAndControllerOve_B./*@>105b21*/Sum2/*@>f0e49*/ + /*@>fceb0*/LabB_ObserverAndControllerOve_P./*@>105bb4*/Ad/*@>fbdc6*/[/*@>fbdc3*/i]/*@>f0e4a*/ * /*@>fcb2d*/LabB_ObserverAndControllerOve_B./*@>105b24*/rtb_TmpSignalConversionAtGain_m)/*@>f0c7c*/ + /*@>fceb6*/LabB_ObserverAndControllerOve_P./*@>105bb7*/Ad/*@>fbdce*/[/*@>fbdca*/i/*@>fbdc8*/ + /*@>fbdcb*/8]/*@>f0c7f*/ * /*@>fcb33*/LabB_ObserverAndControllerOve_B./*@>105b27*/rtb_TmpSignalConversionAtGain_c)/*@>f0c7b*/ + /*@>fcebc*/LabB_ObserverAndControllerOve_P./*@>105bba*/Ad/*@>fbdd6*/[/*@>fbdd2*/i/*@>fbdd0*/ + /*@>fbdd3*/12]/*@>f0c89*/ * /*@>fcb39*/LabB_ObserverAndControllerOve_B./*@>105b2a*/rtb_TmpSignalConversionAtGain_k)/*@>e8bbd*/ + ((/*@>fcec2*/LabB_ObserverAndControllerOve_P./*@>105bbd*/Ld/*@>fbdde*/[/*@>fbdda*/i/*@>fbdd8*/ + /*@>fbddb*/4]/*@>f0c71*/ * /*@>f0c7a*/rtb_Add1_idx_0/*@>f0c68*/ + /*@>fcec8*/LabB_ObserverAndControllerOve_P./*@>105bc0*/Ld/*@>fbde4*/[/*@>fbde1*/i]/*@>f0c69*/ * /*@>fcb3f*/LabB_ObserverAndControllerOve_B./*@>105b2d*/converttometers)/*@>e8bbe*/ + /*@>fcece*/LabB_ObserverAndControllerOve_P./*@>105bc3*/Bd/*@>fbdea*/[/*@>fbde7*/i]/*@>ee2d7*/ * /*@>ed9eb*/rtb_SaturationVsupplytoVsupply);
+}
+/* {S!d694}MATLABSystem: '<S3>/Gyroscope' */
+/*  initialize output to a single (float) with the value zero */
+/* 'soMPU6050Gyro:59' out = int16(zeros(3,1)); */
+/* 'soMPU6050Gyro:60' if coder.target('Rtw') */
+/*  done only for code gen */
+/* 'soMPU6050Gyro:61' coder.cinclude('MPU6050wrapper.h'); */
+/*  get the current value of the sensor */
+/* 'soMPU6050Gyro:63' coder.ceval('MPU6050Gyro_Read', coder.wref(out)); */
+/*@>fa402*/MPU6050Gyro_Read(&/*@>fcb4b*/LabB_ObserverAndControllerOve_B./*@>105b30*/out/*@>d9a86*/[/*@>ed3f4*/0]);
+/* {S!d696}DataTypeConversion: '<S3>/Data Type  Conversion1' incorporates:
+ *  MATLABSystem: '<S3>/Gyroscope'
+ */
+/*  pull the data appart */
+/* 'soMPU6050Gyro:68' xvel = out(1); */
+/* 'soMPU6050Gyro:69' yvel = out(2); */
+/* 'soMPU6050Gyro:70' zvel = out(3); */
+/*@>ed658*/rtb_DataTypeConversion1/*@>d862a*/ = /*@>fcb51*/LabB_ObserverAndControllerOve_B./*@>105b33*/out/*@>fbdef*/[/*@>fbdec*/0];
+/* {S!d698}MATLABSystem: '<S53>/Digital Output1' incorporates:
+ *  Constant: '<S54>/Constant'
+ *  RelationalOperator: '<S54>/Compare'
+ */
+/*@>fa404*/writeDigitalPin(/*@>ef65b*/8, /*@>ef65e*/(uint8_T)(/*@>ed961*/rtb_SaturationVsupplytoVsupply/*@>e546e*/ < /*@>fced4*/LabB_ObserverAndControllerOve_P./*@>105bc6*/Constant_Value));
+/* {S!d704}Saturate: '<S53>/Saturation -Vsupply to Vsupply' */
+/*@>f1a88*/if (/*@>f0a86*/rtb_SaturationVsupplytoVsupply/*@>efa09*/ > /*@>fceda*/LabB_ObserverAndControllerOve_P./*@>105bc9*/M1V4LeftMotorDriverPWM6D8FST_Vs) {
+    /* {S!d700}Saturate: '<S53>/Saturation -Vsupply to Vsupply' */
+    /*@>f1a8c*/rtb_SaturationVsupplytoVsupply/*@>f1a8b*/ = /*@>fcee6*/LabB_ObserverAndControllerOve_P./*@>105bcf*/M1V4LeftMotorDriverPWM6D8FST_Vs;
+} else /*@>f1a92*/if (/*@>f0a89*/rtb_SaturationVsupplytoVsupply/*@>efa06*/ < /*@>fcee0*/LabB_ObserverAndControllerOve_P./*@>105bcc*/SaturationVsupplytoVsupply_Lowe) {
+    /* {S!d702}Saturate: '<S53>/Saturation -Vsupply to Vsupply' */
+    /*@>f1a96*/rtb_SaturationVsupplytoVsupply/*@>f1a95*/ = /*@>fceec*/LabB_ObserverAndControllerOve_P./*@>105bd2*/SaturationVsupplytoVsupply_Lowe;
+}
+/* {E!d704}End of Saturate: '<S53>/Saturation -Vsupply to Vsupply' */
+
+/* {S!d706}MATLABSystem: '<S53>/PWM' */
+/*@>ed3ef*/obj/*@>d9e2f*/ = &/*@>fd18b*/LabB_ObserverAndControlle_DWork./*@>105c0e*/obj_fn;
+/*@>ed3ca*/obj->/*@>1059ad*/PWMDriverObj./*@>1059b0*/MW_PWM_HANDLE/*@>da0a1*/ = /*@>fa406*/MW_PWM_GetHandle(/*@>ef671*/6UL);
+/* {S!d708}Gain: '<S53>/conversion to dutycycle (convert to uint8, overflow will provide reverse polairty magnitued)' */
+/*@>fcb57*/LabB_ObserverAndControllerOve_B./*@>105b36*/rtb_Gain8_idx_0/*@>edf83*/ = /*@>f74a1*/(real32_T)/*@>fa408*/floor(/*@>fcef2*/LabB_ObserverAndControllerOve_P./*@>105bd5*/conversiontodutycycleconverttou/*@>edf70*/ * /*@>ed967*/rtb_SaturationVsupplytoVsupply);
+/*@>f1a8d*/if (/*@>fa40a*/rtIsNaNF(/*@>fcb5d*/LabB_ObserverAndControllerOve_B./*@>105b39*/rtb_Gain8_idx_0)/*@>edfa3*/ || /*@>fa40c*/rtIsInfF(/*@>fcb63*/LabB_ObserverAndControllerOve_B./*@>105b3c*/rtb_Gain8_idx_0)) {
+    /*@>fcb75*/LabB_ObserverAndControllerOve_B./*@>105b45*/rtb_Gain8_idx_0/*@>f1a90*/ = /*@>edfa5*/0.0F;
+} else {
+    /*@>fcb69*/LabB_ObserverAndControllerOve_B./*@>105b3f*/rtb_Gain8_idx_0/*@>edfa8*/ = /*@>f74bd*/(real32_T)/*@>fa40e*/fmod(/*@>fcb6f*/LabB_ObserverAndControllerOve_B./*@>105b42*/rtb_Gain8_idx_0, /*@>fd33b*/256.0);
+}
+/* {S!d710}MATLABSystem: '<S53>/PWM' incorporates:
+ *  Gain: '<S53>/conversion to dutycycle (convert to uint8, overflow will provide reverse polairty magnitued)'
+ */
+/*@>fa410*/MW_PWM_SetDutyCycle(/*@>fd191*/LabB_ObserverAndControlle_DWork./*@>105c11*/obj_fn.PWMDriverObj.MW_PWM_HANDLE, /*@>ef681*/(real_T)(/*@>fcb7b*/LabB_ObserverAndControllerOve_B./*@>105b48*/rtb_Gain8_idx_0/*@>edfcb*/ < /*@>edfc7*/0.0F/*@>edfcb*/ ? (int16_T)/*@>edfd3*/(uint8_T)-/*@<edfdc*//*@>edfd1*/(int8_T)/*@>edfdf*/(uint8_T)-/*@<edfcf*//*@>fcb81*/LabB_ObserverAndControllerOve_B./*@>105b4b*/rtb_Gain8_idx_0 : (int16_T)/*@>edfe2*/(uint8_T)/*@>fcb87*/LabB_ObserverAndControllerOve_B./*@>105b4e*/rtb_Gain8_idx_0));
+/* {S!d712}Update for UnitDelay: '<S5>/UD'
+ *
+ * Block description for '<S5>/UD':
+ *  
+ *  Store in Global RAM
+ */
+/*@>fd197*/LabB_ObserverAndControlle_DWork./*@>105c14*/UD_DSTATE/*@>d93ad*/ = /*@>fcb8d*/LabB_ObserverAndControllerOve_B./*@>105b51*/TSamp;
+/* {S!d714}Update for DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)' incorporates:
+ *  Constant: '<S2>/gyro bias'
+ *  Gain: '<S2>/convert to radians//sec'
+ *  Sum: '<S2>/Sum'
+ */
+/*@>fd19d*/LabB_ObserverAndControlle_DWork./*@>105c17*/DiscreteTimeIntegratorconvertfr/*@>10541c*/ += (/*@>ed96d*/rtb_DataTypeConversion1/*@>e5575*/ - /*@>fcef8*/LabB_ObserverAndControllerOve_P./*@>105bd8*/fGyroBias)/*@>edf5b*/ * /*@>fcefe*/LabB_ObserverAndControllerOve_P./*@>105bdb*/converttoradianssec_Gain/*@>edf57*/ * /*@>fcf04*/LabB_ObserverAndControllerOve_P./*@>105bde*/DiscreteTimeIntegratorconvertfr;
+/* {S!d716}Update for UnitDelay: '<S6>/UD'
+ *
+ * Block description for '<S6>/UD':
+ *  
+ *  Store in Global RAM
+ */
+/*@>fd1a9*/LabB_ObserverAndControlle_DWork./*@>105c1a*/UD_DSTATE_o/*@>d93b9*/ = /*@>fcb93*/LabB_ObserverAndControllerOve_B./*@>105b54*/TSamp_n;
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B1)
+/* {S!d718}Update for DiscreteStateSpace: '<S7>/Internal_1_1' */
+%<SLibCG_DumpSSCode("/*@[fe8fd*/",tlcUpdateFcnOfS7B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B2)
+/* {S!d720}Update for DiscreteStateSpace: '<S7>/Internal_1_2' */
+%<SLibCG_DumpSSCode("/*@[fe905*/",tlcUpdateFcnOfS7B2,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B3)
+/* {S!d722}Update for DiscreteStateSpace: '<S7>/Internal_1_3' */
+%<SLibCG_DumpSSCode("/*@[fe90d*/",tlcUpdateFcnOfS7B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B4)
+/* {S!d724}Update for DiscreteStateSpace: '<S7>/Internal_1_4' */
+%<SLibCG_DumpSSCode("/*@[fe915*/",tlcUpdateFcnOfS7B4,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B5)
+/* {S!d726}Update for DiscreteStateSpace: '<S7>/Internal_2_1' */
+%<SLibCG_DumpSSCode("/*@[fe91d*/",tlcUpdateFcnOfS7B5,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B6)
+/* {S!d728}Update for DiscreteStateSpace: '<S7>/Internal_2_2' */
+%<SLibCG_DumpSSCode("/*@[fe925*/",tlcUpdateFcnOfS7B6,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B7)
+/* {S!d730}Update for DiscreteStateSpace: '<S7>/Internal_2_3' */
+%<SLibCG_DumpSSCode("/*@[fe92d*/",tlcUpdateFcnOfS7B7,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B8)
+/* {S!d732}Update for DiscreteStateSpace: '<S7>/Internal_2_4' */
+%<SLibCG_DumpSSCode("/*@[fe935*/",tlcUpdateFcnOfS7B8,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B9)
+/* {S!d734}Update for DiscreteStateSpace: '<S7>/Internal_3_1' */
+%<SLibCG_DumpSSCode("/*@[fe93d*/",tlcUpdateFcnOfS7B9,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B10)
+/* {S!d736}Update for DiscreteStateSpace: '<S7>/Internal_3_2' */
+%<SLibCG_DumpSSCode("/*@[fe945*/",tlcUpdateFcnOfS7B10,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B11)
+/* {S!d738}Update for DiscreteStateSpace: '<S7>/Internal_3_3' */
+%<SLibCG_DumpSSCode("/*@[fe94d*/",tlcUpdateFcnOfS7B11,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B12)
+/* {S!d740}Update for DiscreteStateSpace: '<S7>/Internal_3_4' */
+%<SLibCG_DumpSSCode("/*@[fe955*/",tlcUpdateFcnOfS7B12,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B13)
+/* {S!d742}Update for DiscreteStateSpace: '<S7>/Internal_4_1' */
+%<SLibCG_DumpSSCode("/*@[fe95d*/",tlcUpdateFcnOfS7B13,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B14)
+/* {S!d744}Update for DiscreteStateSpace: '<S7>/Internal_4_2' */
+%<SLibCG_DumpSSCode("/*@[fe965*/",tlcUpdateFcnOfS7B14,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B15)
+/* {S!d746}Update for DiscreteStateSpace: '<S7>/Internal_4_3' */
+%<SLibCG_DumpSSCode("/*@[fe96d*/",tlcUpdateFcnOfS7B15,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B16)
+/* {S!d748}Update for DiscreteStateSpace: '<S7>/Internal_4_4' */
+%<SLibCG_DumpSSCode("/*@[fe975*/",tlcUpdateFcnOfS7B16,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B17)
+/* {S!d750}Update for DiscreteStateSpace: '<S8>/Internal_1_1' */
+%<SLibCG_DumpSSCode("/*@[fe97d*/",tlcUpdateFcnOfS7B17,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B18)
+/* {S!d752}Update for DiscreteStateSpace: '<S8>/Internal_1_2' */
+%<SLibCG_DumpSSCode("/*@[fe985*/",tlcUpdateFcnOfS7B18,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B19)
+/* {S!d754}Update for DiscreteStateSpace: '<S8>/Internal_1_3' */
+%<SLibCG_DumpSSCode("/*@[fe98d*/",tlcUpdateFcnOfS7B19,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B20)
+/* {S!d756}Update for DiscreteStateSpace: '<S8>/Internal_2_1' */
+%<SLibCG_DumpSSCode("/*@[fe995*/",tlcUpdateFcnOfS7B20,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B21)
+/* {S!d758}Update for DiscreteStateSpace: '<S8>/Internal_2_2' */
+%<SLibCG_DumpSSCode("/*@[fe99d*/",tlcUpdateFcnOfS7B21,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B22)
+/* {S!d760}Update for DiscreteStateSpace: '<S8>/Internal_2_3' */
+%<SLibCG_DumpSSCode("/*@[fe9a5*/",tlcUpdateFcnOfS7B22,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B23)
+/* {S!d762}Update for DiscreteStateSpace: '<S8>/Internal_3_1' */
+%<SLibCG_DumpSSCode("/*@[fe9ad*/",tlcUpdateFcnOfS7B23,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B24)
+/* {S!d764}Update for DiscreteStateSpace: '<S8>/Internal_3_2' */
+%<SLibCG_DumpSSCode("/*@[fe9b5*/",tlcUpdateFcnOfS7B24,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcUpdateFcnOfS7B25)
+/* {S!d766}Update for DiscreteStateSpace: '<S8>/Internal_3_3' */
+%<SLibCG_DumpSSCode("/*@[fe9bd*/",tlcUpdateFcnOfS7B25,"/*@]*/")>\
+%endif
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

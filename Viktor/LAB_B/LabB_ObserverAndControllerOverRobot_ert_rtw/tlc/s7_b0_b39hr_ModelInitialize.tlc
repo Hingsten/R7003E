@@ -1,0 +1,284 @@
+%implements s7_b0_b39hr_ModelInitialize "C"
+
+%function ModelInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+codertarget_arduinobase_inter_a *obj;
+real_T tmp;
+uint8_T tmp_0;
+%closefile localVarDecl
+%assign tlcInitializeConditionsFcnOfS7B1 = OpaqueTLCBlockFcn("InitializeConditions", 7, 1, 0, 3, 0)
+%assign tlcInitializeConditionsFcnOfS7B2 = OpaqueTLCBlockFcn("InitializeConditions", 7, 2, 0, 3, 1)
+%assign tlcInitializeConditionsFcnOfS7B3 = OpaqueTLCBlockFcn("InitializeConditions", 7, 3, 0, 3, 2)
+%assign tlcInitializeConditionsFcnOfS7B4 = OpaqueTLCBlockFcn("InitializeConditions", 7, 4, 0, 3, 3)
+%assign tlcInitializeConditionsFcnOfS7B5 = OpaqueTLCBlockFcn("InitializeConditions", 7, 5, 0, 3, 4)
+%assign tlcInitializeConditionsFcnOfS7B6 = OpaqueTLCBlockFcn("InitializeConditions", 7, 6, 0, 3, 5)
+%assign tlcInitializeConditionsFcnOfS7B7 = OpaqueTLCBlockFcn("InitializeConditions", 7, 7, 0, 3, 6)
+%assign tlcInitializeConditionsFcnOfS7B8 = OpaqueTLCBlockFcn("InitializeConditions", 7, 8, 0, 3, 7)
+%assign tlcInitializeConditionsFcnOfS7B9 = OpaqueTLCBlockFcn("InitializeConditions", 7, 9, 0, 3, 8)
+%assign tlcInitializeConditionsFcnOfS7B10 = OpaqueTLCBlockFcn("InitializeConditions", 7, 10, 0, 3, 9)
+%assign tlcInitializeConditionsFcnOfS7B11 = OpaqueTLCBlockFcn("InitializeConditions", 7, 11, 0, 3, 10)
+%assign tlcInitializeConditionsFcnOfS7B12 = OpaqueTLCBlockFcn("InitializeConditions", 7, 12, 0, 3, 11)
+%assign tlcInitializeConditionsFcnOfS7B13 = OpaqueTLCBlockFcn("InitializeConditions", 7, 13, 0, 3, 12)
+%assign tlcInitializeConditionsFcnOfS7B14 = OpaqueTLCBlockFcn("InitializeConditions", 7, 14, 0, 3, 13)
+%assign tlcInitializeConditionsFcnOfS7B15 = OpaqueTLCBlockFcn("InitializeConditions", 7, 15, 0, 3, 14)
+%assign tlcInitializeConditionsFcnOfS7B16 = OpaqueTLCBlockFcn("InitializeConditions", 7, 16, 0, 3, 15)
+%assign tlcInitializeConditionsFcnOfS7B17 = OpaqueTLCBlockFcn("InitializeConditions", 7, 17, 0, 3, 16)
+%assign tlcInitializeConditionsFcnOfS7B18 = OpaqueTLCBlockFcn("InitializeConditions", 7, 18, 0, 3, 17)
+%assign tlcInitializeConditionsFcnOfS7B19 = OpaqueTLCBlockFcn("InitializeConditions", 7, 19, 0, 3, 18)
+%assign tlcInitializeConditionsFcnOfS7B20 = OpaqueTLCBlockFcn("InitializeConditions", 7, 20, 0, 3, 19)
+%assign tlcInitializeConditionsFcnOfS7B21 = OpaqueTLCBlockFcn("InitializeConditions", 7, 21, 0, 3, 20)
+%assign tlcInitializeConditionsFcnOfS7B22 = OpaqueTLCBlockFcn("InitializeConditions", 7, 22, 0, 3, 21)
+%assign tlcInitializeConditionsFcnOfS7B23 = OpaqueTLCBlockFcn("InitializeConditions", 7, 23, 0, 3, 22)
+%assign tlcInitializeConditionsFcnOfS7B24 = OpaqueTLCBlockFcn("InitializeConditions", 7, 24, 0, 3, 23)
+%assign tlcInitializeConditionsFcnOfS7B25 = OpaqueTLCBlockFcn("InitializeConditions", 7, 25, 0, 3, 24)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%<SLibCGIRDumpSystemUserCode(7, "Start", "Header")>\
+%<SLibCGIRDumpSystemUserCode(7, "Start", "Body")>\
+/* {S!d1060}Start for MATLABSystem: '<S3>/Encoder' */
+/*  Constructor */
+/* 'Encoder_arduino:36' coder.allowpcode('plain'); */
+/* 'Encoder_arduino:1' matlab.System */
+/* 'Encoder_arduino:2' coder.ExternalDependency */
+/* 'Encoder_arduino:3' matlab.system.mixin.Propagates */
+/* 'Encoder_arduino:4' matlab.system.mixin.CustomIcon */
+/*  Support name-value pair arguments when constructing the object. */
+/* 'Encoder_arduino:39' setProperties(obj,nargin,varargin{:}); */
+/*@>fd22d*/LabB_ObserverAndControlle_DWork./*@>1064a1*/obj_g./*@>10648c*/matlabCodegenIsDeleted/*@>da890*/ = /*@>edcb4*/false;
+/* 'Encoder_arduino:69' validateattributes(value,... */
+/* 'Encoder_arduino:70'                 {'numeric'},... */
+/* 'Encoder_arduino:71'                 {'real','nonnegative','integer','scalar','>=',0,'<=',obj.MaxNumEncoder},... */
+/* 'Encoder_arduino:72'                 '', ... */
+/* 'Encoder_arduino:73'                 'Encoder'); */
+/* 'Encoder_arduino:74' obj.Encoder = value; */
+/* 'Encoder_arduino:43' coder.extrinsic('sprintf') */
+/*  Do not generate code for sprintf */
+/* 'Encoder_arduino:44' validateattributes(value,... */
+/* 'Encoder_arduino:45'                 {'numeric'},... */
+/* 'Encoder_arduino:46'                 {'real','nonnegative','integer','scalar'},... */
+/* 'Encoder_arduino:47'                 '', ... */
+/* 'Encoder_arduino:48'                 'PinA'); */
+/* 'Encoder_arduino:49' assert(any(value == obj.AvailablePin), ... */
+/* 'Encoder_arduino:50'                 'Invalid value for Pin. Pin must be one of the following: %<"\%s\', ..."> */
+/* 'Encoder_arduino:51'                 sprintf('%<"\%d \', obj.AvailablePin));"> */
+/* 'Encoder_arduino:52' obj.PinA = value; */
+/* 'Encoder_arduino:56' coder.extrinsic('sprintf') */
+/*  Do not generate code for sprintf */
+/* 'Encoder_arduino:57' validateattributes(value,... */
+/* 'Encoder_arduino:58'                 {'numeric'},... */
+/* 'Encoder_arduino:59'                 {'real','nonnegative','integer','scalar'},... */
+/* 'Encoder_arduino:60'                 '', ... */
+/* 'Encoder_arduino:61'                 'PinB'); */
+/* 'Encoder_arduino:62' assert(any(value == obj.AvailablePin), ... */
+/* 'Encoder_arduino:63'                 'Invalid value for Pin. Pin must be one of the following: %<"\%s\', ..."> */
+/* 'Encoder_arduino:64'                 sprintf('%<"\%d \', obj.AvailablePin));"> */
+/* 'Encoder_arduino:65' obj.PinB = value; */
+/*@>fd233*/LabB_ObserverAndControlle_DWork./*@>1064a4*/obj_g./*@>106492*/isInitialized/*@>da7cc*/ = /*@>ef774*/1L;
+/*         %<"\%\% Define output properties"> */
+/* 'Encoder_arduino:136' num = 0; */
+/*         %<"\%\% Define output properties"> */
+/* 'Encoder_arduino:136' num = 0; */
+/* 'Encoder_arduino:108' if coder.target('Rtw') */
+/*    Call: void enc_init(int enc, int pinA, int pinB) */
+/* 'Encoder_arduino:110' coder.cinclude('encoder_arduino.h'); */
+/* 'Encoder_arduino:111' coder.ceval('enc_init', obj.Encoder, obj.PinA, obj.PinB); */
+/*@>fa44a*/enc_init(/*@>edcb3*/1.0, /*@>edcb2*/19.0, /*@>edcb1*/18.0);
+/*                  if(obj.PWMTimer> 0) */
+/*                      coder.cinclude('PWMFSelect.h'); */
+/*                      coder.ceval('PWM_Select', obj.PWMFSelect, obj.PWMTimer); */
+/*                      disp('skipp!!!') */
+/*                  end */
+/*@>fd239*/LabB_ObserverAndControlle_DWork./*@>1064a7*/obj_g./*@>10648f*/isSetupComplete/*@>da7de*/ = /*@>edcb7*/true;
+/* {S!d1062}Start for MATLABSystem: '<S9>/Serial Transmit' */
+/*@>fd23f*/LabB_ObserverAndControlle_DWork./*@>1064aa*/obj./*@>106486*/matlabCodegenIsDeleted/*@>da99b*/ = /*@>edcab*/false;
+/*@>fd245*/LabB_ObserverAndControlle_DWork./*@>1064ad*/obj./*@>106489*/Protocol/*@>da97c*/ = /*@>fcfee*/LabB_ObserverAndControllerOve_P./*@>106495*/SerialTransmit_Protocol;
+/*@>fd24b*/LabB_ObserverAndControlle_DWork./*@>1064b0*/obj./*@>106483*/isInitialized/*@>da9ad*/ = /*@>ef780*/1L;
+/*@>fd251*/LabB_ObserverAndControlle_DWork./*@>1064b3*/obj./*@>10647d*/port/*@>daa47*/ = /*@>edca6*/0.0;
+/*@>fd257*/LabB_ObserverAndControlle_DWork./*@>1064b6*/obj./*@>10647a*/dataSizeInBytes/*@>daa4c*/ = /*@>edca4*/1.0;
+/*@>fd25d*/LabB_ObserverAndControlle_DWork./*@>1064b9*/obj./*@>106477*/dataType/*@>daa51*/ = /*@>edca2*/0.0;
+/*@>fd263*/LabB_ObserverAndControlle_DWork./*@>1064bc*/obj./*@>106474*/sendModeEnum/*@>daa56*/ = /*@>edca0*/0.0;
+/*@>fd269*/LabB_ObserverAndControlle_DWork./*@>1064bf*/obj./*@>106471*/sendFormatEnum/*@>daa5b*/ = /*@>edc9e*/0.0;
+/*@>ee316*/tmp/*@>ee318*/ = /*@[ff232*/%<(SLibCGCallSubFcn("rt_roundd_snf", ["/*@>1066c3*/LabB_ObserverAndControlle_DWork./*@>1066c2*/obj.port"], 0, 3, 0))>/*@]*/;
+/*@>f1a9c*/if (/*@>f107c*/tmp/*@>f107a*/ < /*@>f107d*/256.0) {
+    /*@>f1aa1*/if (/*@>f1081*/tmp/*@>f107f*/ >= /*@>f1082*/0.0) {
+        /*@>f1aa5*/tmp_0/*@>f1aa4*/ = /*@>f1083*/(uint8_T)/*@>f1085*/tmp;
+    } else {
+        /*@>f1aa0*/tmp_0/*@>f1a9f*/ = /*@>10633b*/0U;
+    }
+} else {
+    /*@>f1a95*/tmp_0/*@>f1a97*/ = /*@>f1087*/MAX_uint8_T;
+}
+/*@>fa44e*/MW_SCI_Open(/*@>f1a99*/tmp_0);
+/*@>fd275*/LabB_ObserverAndControlle_DWork./*@>1064c5*/obj./*@>106480*/isSetupComplete/*@>da9bf*/ = /*@>edca8*/true;
+/* {E!d1062}End of Start for MATLABSystem: '<S9>/Serial Transmit' */
+
+/* {S!d1064}Start for MATLABSystem: '<S3>/Gyroscope' */
+/*  Constructor */
+/* 'soMPU6050Gyro:27' coder.allowpcode('plain'); */
+/* 'soMPU6050Gyro:1' matlab.System */
+/* 'soMPU6050Gyro:1' coder.ExternalDependency */
+/*  Support name-value pair arguments when constructing the object. */
+/* 'soMPU6050Gyro:30' setProperties(obj,nargin,varargin{:}); */
+/*@>fd27b*/LabB_ObserverAndControlle_DWork./*@>1064c8*/obj_f./*@>106468*/matlabCodegenIsDeleted/*@>dabf7*/ = /*@>edc98*/false;
+/* 'soMPU6050Gyro:34' coder.extrinsic('sprintf') */
+/*  Do not generate code for sprintf */
+/* 'soMPU6050Gyro:35' validateattributes(value,... */
+/* 'soMPU6050Gyro:36'                 {'numeric'},... */
+/* 'soMPU6050Gyro:37'                 {'real','nonnegative','integer','scalar'},... */
+/* 'soMPU6050Gyro:38'                 '', ... */
+/* 'soMPU6050Gyro:39'                 'DLPFmode'); */
+/* 'soMPU6050Gyro:40' obj.DLPFmode = value; */
+/*@>fd281*/LabB_ObserverAndControlle_DWork./*@>1064cb*/obj_f./*@>10646e*/isInitialized/*@>dab47*/ = /*@>ef7a3*/1L;
+/* 'soMPU6050Gyro:46' if coder.target('Rtw') */
+/*  done only for code gen */
+/* 'soMPU6050Gyro:47' coder.cinclude('MPU6050wrapper.h'); */
+/*  initialize the sensor */
+/*                  coder.ceval('MPU6050Accel_Init'); */
+/* 'soMPU6050Gyro:51' coder.ceval('MPU6050Gyro_Init', obj.DLPFmode); */
+/*@>fa450*/MPU6050Gyro_Init(/*@>edc97*/0.0);
+/*@>fd287*/LabB_ObserverAndControlle_DWork./*@>1064ce*/obj_f./*@>10646b*/isSetupComplete/*@>dab59*/ = /*@>edc9a*/true;
+/* {S!d1066}Start for MATLABSystem: '<S53>/Digital Output1' */
+/*@>fd28d*/LabB_ObserverAndControlle_DWork./*@>1064d1*/obj_j./*@>106465*/matlabCodegenIsDeleted/*@>dacc6*/ = /*@>edc94*/false;
+/*@>fd293*/LabB_ObserverAndControlle_DWork./*@>1064d4*/obj_j./*@>106462*/isInitialized/*@>dacd8*/ = /*@>ef7ac*/1L;
+/*@>fa452*/digitalIOSetup(/*@>ef7af*/8, /*@>ef7b2*/1);
+/*@>fd299*/LabB_ObserverAndControlle_DWork./*@>1064d7*/obj_j./*@>10645f*/isSetupComplete/*@>dacea*/ = /*@>edc91*/true;
+/* {S!d1068}Start for MATLABSystem: '<S53>/PWM' */
+/*@>fd29f*/LabB_ObserverAndControlle_DWork./*@>1064da*/obj_fn./*@>10645c*/matlabCodegenIsDeleted/*@>daebc*/ = /*@>edc8c*/false;
+/*@>edc8a*/obj/*@>daec4*/ = &/*@>fd2a5*/LabB_ObserverAndControlle_DWork./*@>1064dd*/obj_fn;
+/*@>fd2ab*/LabB_ObserverAndControlle_DWork./*@>1064e0*/obj_fn./*@>106459*/isInitialized/*@>daece*/ = /*@>ef7bc*/1L;
+/*@>edc5a*/obj->/*@>106450*/PWMDriverObj./*@>106453*/MW_PWM_HANDLE/*@>daffc*/ = /*@>fa454*/MW_PWM_Open(/*@>ef7c2*/6UL, /*@>edc57*/0.0, /*@>edc56*/0.0);
+/*@>fd2b1*/LabB_ObserverAndControlle_DWork./*@>1064e3*/obj_fn./*@>106456*/isSetupComplete/*@>daee0*/ = /*@>edc87*/true;
+%<SLibCGIRDumpSystemUserCode(7, "Start", "Trailer")>\
+/* {S!d1070}InitializeConditions for UnitDelay: '<S5>/UD'
+ *
+ * Block description for '<S5>/UD':
+ *  
+ *  Store in Global RAM
+ */
+/*@>fd2b7*/LabB_ObserverAndControlle_DWork./*@>1064e6*/UD_DSTATE/*@>da736*/ = /*@>fcff4*/LabB_ObserverAndControllerOve_P./*@>106498*/DiscreteDerivative_ICPrevScaled;
+/* {S!d1072}InitializeConditions for DiscreteIntegrator: '<S2>/Discrete-Time  Integrator (convert from theta_b_dot to theta_b)' */
+/*@>fd2bd*/LabB_ObserverAndControlle_DWork./*@>1064e9*/DiscreteTimeIntegratorconvertfr/*@>da49b*/ = /*@>fcffa*/LabB_ObserverAndControllerOve_P./*@>10649b*/DiscreteTimeIntegratorconvert_e;
+/* {S!d1074}InitializeConditions for UnitDelay: '<S6>/UD'
+ *
+ * Block description for '<S6>/UD':
+ *  
+ *  Store in Global RAM
+ */
+/*@>fd2c3*/LabB_ObserverAndControlle_DWork./*@>1064ec*/UD_DSTATE_o/*@>da742*/ = /*@>fd000*/LabB_ObserverAndControllerOve_P./*@>10649e*/DiscreteDerivative_ICPrevScal_n;
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B1)
+/* {S!d1076}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_1_1' */
+%<SLibCG_DumpSSCode("/*@[fea20*/",tlcInitializeConditionsFcnOfS7B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B2)
+/* {S!d1078}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_1_2' */
+%<SLibCG_DumpSSCode("/*@[fea28*/",tlcInitializeConditionsFcnOfS7B2,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B3)
+/* {S!d1080}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_1_3' */
+%<SLibCG_DumpSSCode("/*@[fea30*/",tlcInitializeConditionsFcnOfS7B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B4)
+/* {S!d1082}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_1_4' */
+%<SLibCG_DumpSSCode("/*@[fea38*/",tlcInitializeConditionsFcnOfS7B4,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B5)
+/* {S!d1084}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_2_1' */
+%<SLibCG_DumpSSCode("/*@[fea40*/",tlcInitializeConditionsFcnOfS7B5,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B6)
+/* {S!d1086}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_2_2' */
+%<SLibCG_DumpSSCode("/*@[fea48*/",tlcInitializeConditionsFcnOfS7B6,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B7)
+/* {S!d1088}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_2_3' */
+%<SLibCG_DumpSSCode("/*@[fea50*/",tlcInitializeConditionsFcnOfS7B7,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B8)
+/* {S!d1090}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_2_4' */
+%<SLibCG_DumpSSCode("/*@[fea58*/",tlcInitializeConditionsFcnOfS7B8,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B9)
+/* {S!d1092}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_3_1' */
+%<SLibCG_DumpSSCode("/*@[fea60*/",tlcInitializeConditionsFcnOfS7B9,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B10)
+/* {S!d1094}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_3_2' */
+%<SLibCG_DumpSSCode("/*@[fea68*/",tlcInitializeConditionsFcnOfS7B10,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B11)
+/* {S!d1096}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_3_3' */
+%<SLibCG_DumpSSCode("/*@[fea70*/",tlcInitializeConditionsFcnOfS7B11,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B12)
+/* {S!d1098}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_3_4' */
+%<SLibCG_DumpSSCode("/*@[fea78*/",tlcInitializeConditionsFcnOfS7B12,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B13)
+/* {S!d1100}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_4_1' */
+%<SLibCG_DumpSSCode("/*@[fea80*/",tlcInitializeConditionsFcnOfS7B13,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B14)
+/* {S!d1102}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_4_2' */
+%<SLibCG_DumpSSCode("/*@[fea88*/",tlcInitializeConditionsFcnOfS7B14,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B15)
+/* {S!d1104}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_4_3' */
+%<SLibCG_DumpSSCode("/*@[fea90*/",tlcInitializeConditionsFcnOfS7B15,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B16)
+/* {S!d1106}InitializeConditions for DiscreteStateSpace: '<S7>/Internal_4_4' */
+%<SLibCG_DumpSSCode("/*@[fea98*/",tlcInitializeConditionsFcnOfS7B16,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B17)
+/* {S!d1108}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_1_1' */
+%<SLibCG_DumpSSCode("/*@[feaa0*/",tlcInitializeConditionsFcnOfS7B17,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B18)
+/* {S!d1110}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_1_2' */
+%<SLibCG_DumpSSCode("/*@[feaa8*/",tlcInitializeConditionsFcnOfS7B18,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B19)
+/* {S!d1112}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_1_3' */
+%<SLibCG_DumpSSCode("/*@[feab0*/",tlcInitializeConditionsFcnOfS7B19,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B20)
+/* {S!d1114}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_2_1' */
+%<SLibCG_DumpSSCode("/*@[feab8*/",tlcInitializeConditionsFcnOfS7B20,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B21)
+/* {S!d1116}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_2_2' */
+%<SLibCG_DumpSSCode("/*@[feac0*/",tlcInitializeConditionsFcnOfS7B21,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B22)
+/* {S!d1118}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_2_3' */
+%<SLibCG_DumpSSCode("/*@[feac8*/",tlcInitializeConditionsFcnOfS7B22,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B23)
+/* {S!d1120}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_3_1' */
+%<SLibCG_DumpSSCode("/*@[fead0*/",tlcInitializeConditionsFcnOfS7B23,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B24)
+/* {S!d1122}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_3_2' */
+%<SLibCG_DumpSSCode("/*@[fead8*/",tlcInitializeConditionsFcnOfS7B24,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS7B25)
+/* {S!d1124}InitializeConditions for DiscreteStateSpace: '<S8>/Internal_3_3' */
+%<SLibCG_DumpSSCode("/*@[feae0*/",tlcInitializeConditionsFcnOfS7B25,"/*@]*/")>\
+%endif
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedModelInitializeLocalVars", localVarDecl)>
+%endfunction
+%function ModelInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

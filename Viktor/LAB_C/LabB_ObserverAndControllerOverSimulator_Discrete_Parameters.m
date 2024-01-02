@@ -1,15 +1,15 @@
 close all;
 clear all;
 clc
-fs = 200;% Hz
+fs = 8;% Hz
 simStep = 0.0001;
 fSamplingPeriod = floor(1/fs/simStep)*simStep
 [Ad, Bd,Cd,Dd] = getDiscreteStateSpace(fSamplingPeriod);
 Bd = Bd(:,1);
 
 %Controller
-Cweight = [10 1 10 2];
-rho = 8.5;
+Cweight = [20 5 10 1];
+rho = 20;
 [Kd,CLP] = getDiscreteKd(Cweight,rho,fSamplingPeriod);
 Kd
 

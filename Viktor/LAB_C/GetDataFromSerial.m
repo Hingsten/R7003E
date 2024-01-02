@@ -1,12 +1,13 @@
 % % cleaning
-% clear all;
-% clc;
-% close all;
+clear all;
+clc;
+close all;
 
 
 % basic parameters
 % fSamplingPeriod	= should be already loaded in the workspace
-iCommunicationTime	= 30;		% [sec]
+fSamplingPeriod = 0.005;
+iCommunicationTime	= 60;		% [sec]
 iCOMPort			= 'Com3';
 fPlotsUpdatesPeriod	= 1;		% [sec]
 %

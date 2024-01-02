@@ -1,0 +1,58 @@
+%implements s7_b0_ld9hr_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+codertarget_arduinobase_inter_a *obj;
+%closefile localVarDecl
+/* {S!d768}Terminate for MATLABSystem: '<S3>/Encoder' */
+/*@>da179*/if (!/*@<da173*//*@>fd1d9*/LabB_ObserverAndControlle_DWork./*@>1062c0*/obj_g.matlabCodegenIsDeleted) {
+    /*@>fd1df*/LabB_ObserverAndControlle_DWork./*@>1062c3*/obj_g./*@>1062a5*/matlabCodegenIsDeleted/*@>da172*/ = /*@>edbd2*/true;
+}
+/* {E!d768}End of Terminate for MATLABSystem: '<S3>/Encoder' */
+
+/* {S!d770}Terminate for MATLABSystem: '<S9>/Serial Transmit' */
+/*@>da1c5*/if (!/*@<da1bd*//*@>fd1e5*/LabB_ObserverAndControlle_DWork./*@>1062c6*/obj.matlabCodegenIsDeleted) {
+    /*@>fd1eb*/LabB_ObserverAndControlle_DWork./*@>1062c9*/obj./*@>1062a8*/matlabCodegenIsDeleted/*@>da1bc*/ = /*@>edbd5*/true;
+}
+/* {E!d770}End of Terminate for MATLABSystem: '<S9>/Serial Transmit' */
+
+/* {S!d772}Terminate for MATLABSystem: '<S3>/Gyroscope' */
+/*@>da212*/if (!/*@<da20c*//*@>fd1f1*/LabB_ObserverAndControlle_DWork./*@>1062cc*/obj_f.matlabCodegenIsDeleted) {
+    /*@>fd1f7*/LabB_ObserverAndControlle_DWork./*@>1062cf*/obj_f./*@>1062ab*/matlabCodegenIsDeleted/*@>da20b*/ = /*@>edbd8*/true;
+}
+/* {E!d772}End of Terminate for MATLABSystem: '<S3>/Gyroscope' */
+
+/* {S!d774}Terminate for MATLABSystem: '<S53>/Digital Output1' */
+/*@>da268*/if (!/*@<da25e*//*@>fd1fd*/LabB_ObserverAndControlle_DWork./*@>1062d2*/obj_j.matlabCodegenIsDeleted) {
+    /*@>fd203*/LabB_ObserverAndControlle_DWork./*@>1062d5*/obj_j./*@>1062ae*/matlabCodegenIsDeleted/*@>da25d*/ = /*@>edbdb*/true;
+}
+/* {E!d774}End of Terminate for MATLABSystem: '<S53>/Digital Output1' */
+
+/* {S!d776}Terminate for MATLABSystem: '<S53>/PWM' */
+/*@>edbde*/obj/*@>da2e1*/ = &/*@>fd209*/LabB_ObserverAndControlle_DWork./*@>1062d8*/obj_fn;
+/*@>da2f3*/if (!/*@<da2eb*//*@>fd20f*/LabB_ObserverAndControlle_DWork./*@>1062db*/obj_fn.matlabCodegenIsDeleted) {
+    /*@>fd215*/LabB_ObserverAndControlle_DWork./*@>1062de*/obj_fn./*@>1062b1*/matlabCodegenIsDeleted/*@>da2ea*/ = /*@>edbe2*/true;
+    /*@>da30f*/if ((/*@>fd21b*/LabB_ObserverAndControlle_DWork./*@>1062e1*/obj_fn.isInitialized/*@>da30e*/ == /*@>ef726*/1L)/*@>feaeb*/ && /*@>fd221*/LabB_ObserverAndControlle_DWork./*@>1062e4*/obj_fn.isSetupComplete) {
+        /*@>edc05*/obj->/*@>1062ba*/PWMDriverObj./*@>1062b7*/MW_PWM_HANDLE/*@>da420*/ = /*@>fa444*/MW_PWM_GetHandle(/*@>ef72d*/6UL);
+        /*@>fa446*/MW_PWM_SetDutyCycle(/*@>fd227*/LabB_ObserverAndControlle_DWork./*@>1062e7*/obj_fn.PWMDriverObj.MW_PWM_HANDLE, /*@>edc14*/0.0);
+        /*@>edc09*/obj->/*@>1062bd*/PWMDriverObj./*@>1062b4*/MW_PWM_HANDLE/*@>da38b*/ = /*@>fa448*/MW_PWM_GetHandle(/*@>ef734*/6UL);
+        /*@>fa44a*/MW_PWM_Close(/*@>fd22d*/LabB_ObserverAndControlle_DWork./*@>1062ea*/obj_fn.PWMDriverObj.MW_PWM_HANDLE);
+    }
+}
+/* {E!d776}End of Terminate for MATLABSystem: '<S53>/PWM' */
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedTerminateLocalVars", localVarDecl)>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

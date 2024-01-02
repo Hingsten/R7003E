@@ -10,7 +10,10 @@ Bd = Bd(:,1);
 
 Cweight = [10, 1,10 ,2];
 rho = 8.5;
-[Kd,CLP] = getDiscreteKd(Cweight,rho,fSamplingPeriod);
+
+% Cweight = [10, 2,20 ,1];
+% rho = 20;
+[Kd,CLP] = getDiscreteKd(Cweight,rho,fSamplingPeriod)
 
 %Observer poles
 factor = 4;
@@ -29,8 +32,9 @@ observerPoles(2:4) = CLP(index).^factor; % Place pole to not disturb dominant po
 %Now to calculate Nd
 M = [Ad-Bd*Kd Bd*Kd; zeros(size(Ad))      Ad-Ld(:,1)*Cd];
 DCgain = [Cd zeros(size(Cd))]*inv(eye(8)-M)*[Bd;Bd]
-Nud = 1./DCgain
+Nud = inv(DCgain)
 Nxd = 0;
 
 [Ad,Bd,Cd,Dd] = getDiscreteStateSpace(fSamplingPeriod);
 Bd = Bd(:,1);
+Nud = 21 %Seems to be about right
