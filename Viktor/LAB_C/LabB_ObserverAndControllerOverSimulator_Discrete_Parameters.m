@@ -1,7 +1,7 @@
 close all;
 clear all;
 clc
-fs = 8;% Hz
+fs = 13;% Hz
 simStep = 0.0001;
 fSamplingPeriod = floor(1/fs/simStep)*simStep
 [Ad, Bd,Cd,Dd] = getDiscreteStateSpace(fSamplingPeriod);
