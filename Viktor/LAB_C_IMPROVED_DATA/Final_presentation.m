@@ -7,8 +7,8 @@ save("group_10_results.mat","group_10_experiment_1_times","group_10_experiment_1
 
 load 5_5_200cm_10s.mat
 index = 1581:6000;
-group_10_experiment_1_times = afTimes(1:length(index));
-group_10_experiment_1_encoder = aafProcessedInformation(2,index);
-group_10_experiment_1_angle = aafProcessedInformation(3,index);
-group_10_experiment_1_actuation = aafProcessedInformation(1,index);
-save("group_10_results.mat","group_10_experiment_1_times","group_10_experiment_1_encoder","group_10_experiment_1_angle","group_10_experiment_1_actuation","-append")
+group_10_experiment_2_times = afTimes(1:length(index));
+group_10_experiment_2_encoder = aafProcessedInformation(2,index);
+group_10_experiment_2_angle = aafProcessedInformation(3,index);
+group_10_experiment_2_actuation = aafProcessedInformation(1,index);
+save("group_10_results.mat","group_10_experiment_2_times","group_10_experiment_2_encoder","group_10_experiment_2_angle","group_10_experiment_2_actuation","-append")
