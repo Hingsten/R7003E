@@ -1,0 +1,9 @@
+
+avrdude: AVR device initialized and ready to accept instructions
+avrdude: Device signature = 0x1e9801 (probably m2560)
+avrdude: reading input file "C:\Users\Jasminis\OneDrive\R7003E\Viktor\group_10_final_demo/group_10_Simulink.hex"
+avrdude: writing flash (27402 bytes):
+avrdude: 27402 bytes of flash written
+
+avrdude done.  Thank you.
+

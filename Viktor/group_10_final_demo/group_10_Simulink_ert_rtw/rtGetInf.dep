@@ -1,0 +1,11 @@
+rtGetInf.o: \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rtGetInf.c \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rtwtypes.h \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rtGetInf.h \
+ C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rt_nonfinite.h
+
+C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rtwtypes.h:
+
+C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rtGetInf.h:
+
+C:/Users/Jasminis/OneDrive/R7003E/Viktor/group_10_final_demo/group_10_Simulink_ert_rtw/rt_nonfinite.h:
